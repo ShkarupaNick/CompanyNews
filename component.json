@@ -10,7 +10,7 @@
         "viewClass": "TextFieldWithNoteView",
         "note": "Please use <b>DNB</b> API key. For more details see <a href='https://dnb.elastic.io/docs/' target='_blank'>DNB API docs</a>."
       },
-      "apiKey": {
+      "apiPassphrase": {
         "label": "API passphrase",
         "required": true,
         "viewClass": "PasswordFieldView",
