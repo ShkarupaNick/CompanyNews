@@ -13,8 +13,7 @@
       "apiPassphrase": {
         "label": "API passphrase",
         "required": true,
-        "viewClass": "PasswordFieldView",
-        "note": "Please use <b>DNB</b> API passphrase. For more details see <a href='https://dnb.elastic.io/docs/' target='_blank'>DNB API docs</a>."
+        "viewClass": "PasswordFieldView"
       }
     },
     "verifier": "io.elastic.petstore.ApiKeyVerifier"
