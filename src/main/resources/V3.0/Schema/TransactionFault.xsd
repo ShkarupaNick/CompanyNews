@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (x64) (http://www.altova.com) by D&B (DUN & BRADSTREET) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tranfault="http://services.dnb.com/TransactionFaultV2.0" targetNamespace="http://services.dnb.com/TransactionFaultV2.0" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="2.0">
+	<xs:element name="TransactionResult" type="tranfault:TransactionResult"/>
+	<xs:element name="ResultDescription">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="512"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:complexType name="TransactionResult">
+		<xs:sequence>
+			<xs:element name="SeverityText" type="tranfault:SeverityType"/>
+			<xs:element name="ResultCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="32"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ResultText" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="512"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ResultMessage" type="tranfault:ResultMessage" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ResultMessage" type="tranfault:ResultMessage"/>
+	<xs:simpleType name="SeverityType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Information"/>
+			<xs:enumeration value="Warning"/>
+			<xs:enumeration value="Error"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ResultMessage">
+		<xs:sequence>
+			<xs:element name="ResultDescription">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="512"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

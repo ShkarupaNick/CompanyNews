@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by DNB (DUN & BRADSTREET) -->
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://services.dnb.com/NewsAndMediaProductServiceV2.0" xmlns:ns="http://services.dnb.com/NewsAndMediaProductServiceV2.0" xmlns:ns1="http://services.dnb.com/TransactionFaultV2.0" name="NewsAndMediaProductService" targetNamespace="http://services.dnb.com/NewsAndMediaProductServiceV2.0">
+	<wsdl:documentation>News and Media Product Service WSDL Version 3.0</wsdl:documentation>
+	<wsdl:types>
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified">
+			<xs:import namespace="http://services.dnb.com/NewsAndMediaProductServiceV2.0" schemaLocation="Schema/NewsAndMediaProductService.xsd"/>
+			<xs:import namespace="http://services.dnb.com/TransactionFaultV2.0" schemaLocation="Schema/TransactionFault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="OrderProductRequest">
+		<wsdl:part name="parameter" element="ns:OrderProductRequest"/>
+	</wsdl:message>
+	<wsdl:message name="OrderProductResponse">
+		<wsdl:part name="parameter" element="ns:OrderProductResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TransactionFault">
+		<wsdl:part name="parameter" element="ns1:TransactionResult"/>
+	</wsdl:message>
+	<wsdl:message name="RetrieveProductRequest">
+		<wsdl:part name="parameter" element="ns:RetrieveProductRequest"/>
+	</wsdl:message>
+	<wsdl:message name="RetrieveProductResponse">
+		<wsdl:part name="parameter" element="ns:RetrieveProductResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="NewsAndMediaProduct">
+		<wsdl:operation name="OrderProduct">
+			<wsdl:input message="tns:OrderProductRequest"/>
+			<wsdl:output message="tns:OrderProductResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+		<wsdl:operation name="RetrieveProduct">
+			<wsdl:input message="tns:RetrieveProductRequest"/>
+			<wsdl:output message="tns:RetrieveProductResponse"/>
+			<wsdl:fault name="TransactionFault" message="tns:TransactionFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="NewsAndMediaProductSoapBinding" type="tns:NewsAndMediaProduct">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="OrderProduct">
+			<soap:operation soapAction="http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="RetrieveProduct">
+			<soap:operation soapAction="http://services.dnb.com/NewsAndMediaProductService/V3.0/RetrieveProduct"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="TransactionFault">
+				<soap:fault name="TransactionFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="NewsAndMediaProductService">
+		<wsdl:port name="NewsAndMediaProductServiceEndPoint" binding="tns:NewsAndMediaProductSoapBinding">
+			<soap:address location="https://direct.dnb.com/NewsAndMediaProduct/V3.0"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -17,17 +17,53 @@ repositories {
     mavenCentral()
     mavenLocal()
 }
+configurations {
+    jaxws
+}
 
 dependencies {
     compile "io.elastic:sailor-jvm:2.0.1"
     compile "org.glassfish.jersey.core:jersey-client:2.25.1"
     compile "org.glassfish.jersey.media:jersey-media-json-processing:2.25.1"
+    jaxws 'com.sun.xml.ws:jaxws-tools:2.1.4'
 }
+
+
 
 uploadArchives {
     repositories {
         mavenLocal()
     }
+}
+
+task wsimport {
+    ext.destDir = file("${projectDir}/src/main/java")
+    doLast {
+        ant {
+            sourceSets.main.output.classesDir.mkdirs()
+            destDir.mkdirs()
+            taskdef(name: 'wsimport',
+                    classname: 'com.sun.tools.ws.ant.WsImport',
+                    classpath: configurations.jaxws.asPath
+            )
+            wsimport(keep: true,
+                    destdir: sourceSets.main.output.classesDir,
+                    sourcedestdir: destDir,
+                    extension: "true",
+                    verbose: "false",
+                    quiet: "false",
+                    package: "io.elastic.dnb.jaxws",
+                    xnocompile: "true",
+                    wsdl: 'src/main/resources/V3.0/NewsAndMediaProductService.wsdl') {
+                xjcarg(value: "-XautoNameResolution")
+            }
+        }
+    }
+}
+
+compileJava {
+    dependsOn wsimport
+    source wsimport.destDir
 }
 
 task wrapper(type: Wrapper) {

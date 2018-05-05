@@ -23,6 +23,8 @@ public class ApiKeyVerifier implements CredentialsVerifier {
         try {
             //final JsonObject user = HttpClientUtils.getSingle("/user/me", configuration);
             //logger.info("User {} successfully retrieved. Credentials are valid", user.getString("username"));
+
+            //TODO add credential verification
         } catch (Exception e) {
             throw new InvalidCredentialsException("Failed to verify credentials", e);
         }
