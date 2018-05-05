@@ -1,14 +1,20 @@
 {
-  "title": "Petstore API (Java)",
-  "description": "elastic.io component for the Petstore API",
-  "docsUrl": "https://github.com/elasticio/petstore-component-java",
+  "title": "DNB API (Java)",
+  "description": "elastic.io component for the DNB API",
+  "docsUrl": "https://github.com/elasticio/dnb-component-java",
   "credentials": {
     "fields": {
       "apiKey": {
         "label": "API key",
         "required": true,
         "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <b>elasticio</b> as API key. For more details see <a href='https://petstore.elastic.io/docs/' target='_blank'>Petstore API docs</a>."
+        "note": "Please use <b>DNB</b> API key. For more details see <a href='https://dnb.elastic.io/docs/' target='_blank'>DNB API docs</a>."
+      },
+      "apiKey": {
+        "label": "API passphrase",
+        "required": true,
+        "viewClass": "PasswordFieldView",
+        "note": "Please use <b>DNB</b> API passphrase. For more details see <a href='https://dnb.elastic.io/docs/' target='_blank'>DNB API docs</a>."
       }
     },
     "verifier": "io.elastic.petstore.ApiKeyVerifier"
