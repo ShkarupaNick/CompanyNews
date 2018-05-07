@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "OrderProductRequest": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "TransactionDetail": {
+          "required": true,
+          "type": "object",
+          "properties": {
+            "ApplicationTransactionID": {
+              "required": true,
+              "type": "string"
+            }
+          }
+        },
+        "OrderProductRequestDetail": {
+          "type": "object",
+          "required": true,
+          "properties": {
+            "InquiryDetail": {
+              "required": true,
+              "type": "object",
+              "properties": {
+                "DUNSNumber": {
+                  "required": true,
+                  "type": "string"
+                }
+              }
+            },
+            "ProductSpecification": {
+              "type": "object",
+              "required": true,
+              "properties": {
+                "DNBProductID": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            },
+            "ArchiveDetail": {
+              "type": "object",
+              "properties": {
+                "ArchiveProductOptOutIndicator": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "InquiryReferenceDetail": {
+              "type": "object",
+              "properties": {
+                "CustomerBillingEndorsementText": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

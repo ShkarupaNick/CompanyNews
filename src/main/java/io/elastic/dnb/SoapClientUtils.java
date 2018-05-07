@@ -1,13 +1,21 @@
 package io.elastic.dnb;
 
-import io.elastic.dnb.jaxws.OrderProductResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import javax.xml.namespace.QName;
 import javax.xml.soap.*;
-import java.io.ByteArrayOutputStream;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.StringWriter;
 
 public class SoapClientUtils {
+    private static final Logger logger = LoggerFactory.getLogger(SoapClientUtils.class);
+
 
     public SOAPMessage callSoapWebService(String soapEndpointUrl, String soapAction, Document body, String apiKey, String apiPassphrase) {
         SOAPMessage soapResponse = null;
@@ -17,26 +25,23 @@ public class SoapClientUtils {
             SOAPConnection soapConnection = soapConnectionFactory.createConnection();
             SOAPMessage request = createSOAPRequest(soapAction, body, apiKey, apiPassphrase);
 
-
-            // Print the SOAP Response
-            ByteArrayOutputStream out = new ByteArrayOutputStream();
-            request.writeTo(out);
-            System.out.println("\n\n\n" + new String(out.toByteArray()));
-
-
-            // Send SOAP Message to SOAP Server
+            logger.info("Soap request to endpoint: {}", soapEndpointUrl);
+            logger.trace("request: {}",toString(request.getSOAPBody().getOwnerDocument()));
             soapResponse = soapConnection.call(request, soapEndpointUrl);
 
-            // Print the SOAP Response
-            System.out.println("Response SOAP Message:");
-            soapResponse.writeTo(System.out);
-            System.out.println();
+
+            logger.info("Soap response received...");
+            logger.trace("response: {}",toString(soapResponse.getSOAPBody().getOwnerDocument()));
+//            // Print the SOAP Response
+//            System.out.println("Response SOAP Message:");
+//            soapResponse.writeTo(System.out);
+//            System.out.println();
 
             soapConnection.close();
 
         } catch (Exception e) {
-            System.err.println("\nError occurred while sending SOAP Request to Server!\nMake sure you have the correct endpoint URL and SOAPAction!\n");
-            e.printStackTrace();
+            logger.error("Error occurred while sending SOAP Request to Server!  Make sure you have the correct endpoint URL and SOAPAction!");
+            throw new RuntimeException(e);
         }
         return soapResponse;
     }
@@ -86,7 +91,20 @@ public class SoapClientUtils {
             throw new RuntimeException(e);
         }
     }
+    private static String toString(Document doc) {
+        try {
+            StringWriter sw = new StringWriter();
+            TransformerFactory tf = TransformerFactory.newInstance();
+            Transformer transformer = tf.newTransformer();
+            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 
-
-
+            transformer.transform(new DOMSource(doc), new StreamResult(sw));
+            return sw.toString();
+        } catch (Exception ex) {
+            throw new RuntimeException("Error converting to String", ex);
+        }
+    }
 }

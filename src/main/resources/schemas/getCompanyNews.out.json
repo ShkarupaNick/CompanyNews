@@ -1,0 +1,164 @@
+{
+  "type": "object",
+  "properties": {
+    "TransactionDetail": {
+      "type": "object",
+      "properties": {
+        "ApplicationTransactionID": {
+          "type": "string"
+        },
+        "ServiceTransactionID": {
+          "type": "string"
+        },
+        "TransactionTimestamp": {
+          "type": "string"
+        }
+      }
+    },
+    "TransactionResult": {
+      "type": "object",
+      "properties": {
+        "SeverityText": {
+          "type": "string"
+        },
+        "ResultID": {
+          "type": "string"
+        },
+        "ResultText": {
+          "type": "string"
+        }
+      }
+    },
+    "OrderProductResponseDetail": {
+      "type": "object",
+      "properties": {
+        "InquiryDetail": {
+          "type": "object",
+          "properties": {
+            "DUNSNumber": {
+              "type": "string"
+            },
+            "CountryISOAlpha2Code": {
+              "type": "string"
+            }
+          }
+        },
+        "Product": {
+          "type": "object",
+          "properties": {
+            "DNBProductID": {
+              "type": "string"
+            },
+            "Organization": {
+              "type": "object",
+              "properties": {
+                "SubjectHeader": {
+                  "type": "object",
+                  "properties": {
+                    "DUNSNumber": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "Telecommunication": {
+                  "type": "object",
+                  "properties": {
+                    "TelephoneNumber": {
+                      "type": "object",
+                      "properties": {
+                        "TelecommunicationNumber": {
+                          "type": "string"
+                        },
+                        "InternationalDialingCode": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "Location": {
+                  "type": "object",
+                  "properties": {
+                    "PrimaryAddress": {
+                      "type": "object",
+                      "properties": {
+                        "StreetAddressLine": {
+                          "type": "object",
+                          "properties": {
+                            "LineText": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "PrimaryTownName": {
+                          "type": "string"
+                        },
+                        "CountryISOAlpha2Code": {
+                          "type": "string"
+                        },
+                        "TerritoryAbbreviatedName": {
+                          "type": "string"
+                        },
+                        "PostalCode": {
+                          "type": "string"
+                        },
+                        "CountyOfficialName": {
+                          "type": "string"
+                        },
+                        "TerritoryOfficialName": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "MailingAddress": {
+                      "type": "object",
+                      "properties": {
+                        "CountryISOAlpha2Code": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "OrganizationName": {
+                  "type": "object",
+                  "properties": {
+                    "OrganizationPrimaryName": {
+                      "type": "object",
+                      "properties": {
+                        "OrganizationName": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "OrganizationDetail": {
+                  "type": "object",
+                  "properties": {
+                    "FamilyTreeMemberRole": {
+                      "type": "object",
+                      "properties": {
+                        "FamilyTreeMemberRoleText": {
+                          "type": "object",
+                          "properties": {
+                            "-DNBCodeValue": {
+                              "type": "string"
+                            },
+                            "#text": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

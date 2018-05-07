@@ -50,6 +50,7 @@ public class CredentialsVerifierImpl implements CredentialsVerifier {
             if (node.getNodeValue().equals("SC001")) {
                 throw new InvalidCredentialsException("Invalid api key or passphrase. Please, check credentials and try again...");
             }
+            logger.info("Credentials successfully verified...");
         } catch (SOAPException e) {
             throw new InvalidCredentialsException("Failed to verify credentials...", e);
         } catch (XPathExpressionException e) {

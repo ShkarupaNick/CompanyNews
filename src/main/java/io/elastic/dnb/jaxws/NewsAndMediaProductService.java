@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "NewsAndMediaProductService", targetNamespace = "http://services.dnb.com/NewsAndMediaProductServiceV2.0", wsdlLocation = "file:/C:/Java/Elastic/CompanyNews/src/main/resources/V3.0/NewsAndMediaProductService.wsdl")
+@WebServiceClient(name = "NewsAndMediaProductService", targetNamespace = "http://services.dnb.com/NewsAndMediaProductServiceV2.0", wsdlLocation = "file:/C:/Java/Elastic/GetCompanyNews/src/main/resources/V3.0/NewsAndMediaProductService.wsdl")
 public class NewsAndMediaProductService
     extends Service
 {
@@ -30,9 +30,9 @@ public class NewsAndMediaProductService
         try {
             URL baseUrl;
             baseUrl = io.elastic.dnb.jaxws.NewsAndMediaProductService.class.getResource(".");
-            url = new URL(baseUrl, "file:/C:/Java/Elastic/CompanyNews/src/main/resources/V3.0/NewsAndMediaProductService.wsdl");
+            url = new URL(baseUrl, "file:/C:/Java/Elastic/GetCompanyNews/src/main/resources/V3.0/NewsAndMediaProductService.wsdl");
         } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/Java/Elastic/CompanyNews/src/main/resources/V3.0/NewsAndMediaProductService.wsdl', retrying as a local file");
+            logger.warning("Failed to create URL for the wsdl Location: 'file:/C:/Java/Elastic/GetCompanyNews/src/main/resources/V3.0/NewsAndMediaProductService.wsdl', retrying as a local file");
             logger.warning(e.getMessage());
         }
         NEWSANDMEDIAPRODUCTSERVICE_WSDL_LOCATION = url;

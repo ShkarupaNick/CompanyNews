@@ -1,12 +1,16 @@
 package io.elastic.dnb;
 
 import io.elastic.api.InvalidCredentialsException;
+import io.elastic.dnb.builder.SoapRequestBuilder;
+import io.elastic.dnb.builder.SoapResponseBuilder;
+import io.elastic.dnb.jaxws.OrderProductResponse;
 import io.elastic.dnb.verifier.CredentialsVerifierImpl;
 import org.w3c.dom.Document;
 
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPMessage;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
@@ -31,6 +35,18 @@ public class Main {
 
         credentialsVerifier.verify(configuration);
 
+        SoapRequestBuilder soapRequestBuilder = new SoapRequestBuilder();
+        Document request = soapRequestBuilder.buildOrderProductOperationRequestXmlDocument("884114609", "NEWS_MDA", false, "bla bla bla");
+        SoapClientUtils utils = new SoapClientUtils();
+        SOAPMessage soapResponse = utils.callSoapWebService(Constants.API_URL, "http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct", request, configuration.getJsonString("apiKey").getString(), configuration.getJsonString("apiPassphrase").getString());
+        SoapResponseBuilder responseBuilder = new SoapResponseBuilder();
+        try {
+            OrderProductResponse respObject =  responseBuilder.unmarshallOrderProductResponse(soapResponse.getSOAPBody().getFirstChild());
+            JsonObject responseJsonObj = responseBuilder.marshallOrderProductResponseToJson(respObject);
+
+        } catch (SOAPException e) {
+            e.printStackTrace();
+        }
 
 
     }
@@ -44,7 +60,6 @@ public class Main {
             transformer.setOutputProperty(OutputKeys.METHOD, "xml");
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-
             transformer.transform(new DOMSource(doc), new StreamResult(sw));
             return sw.toString();
         } catch (Exception ex) {

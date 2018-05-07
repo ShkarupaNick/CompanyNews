@@ -13,6 +13,39 @@ public class SoapRequestBuilder {
 
     private SoapRequestBuilder soapRequestBuilder;
 
+    public OrderProductRequest buildOrderProductOperationRequest(String DUNSNumber, String DNBProductID, Boolean archiveProductOptOutIndicator, String billingEndorsementText) {
+        OrderProductRequest orderProductRequest = new OrderProductRequest();
+        RequestTransactionDetail transactionDetail = new RequestTransactionDetail();
+        transactionDetail.setApplicationTransactionID(java.util.UUID.randomUUID().toString());
+        orderProductRequest.setTransactionDetail(transactionDetail);
+
+        OrderProductRequestDetail orderProductRequestDetail = new OrderProductRequestDetail();
+
+        InquiryDetail inquiryDetail = new InquiryDetail();
+        inquiryDetail.setDUNSNumber(DUNSNumber);
+        orderProductRequestDetail.setInquiryDetail(inquiryDetail);
+
+        ProductSpecification productSpecification = new ProductSpecification();
+        productSpecification.setDNBProductID(DNBProductID);
+        orderProductRequestDetail.setProductSpecification(productSpecification);
+
+        ArchiveDetail archiveDetail = new ArchiveDetail();
+        archiveDetail.setArchiveProductOptOutIndicator(archiveProductOptOutIndicator);
+        orderProductRequestDetail.setArchiveDetail(archiveDetail);
+
+        InquiryReferenceDetail inquiryReferenceDetail = new InquiryReferenceDetail();
+        inquiryReferenceDetail.setCustomerBillingEndorsementText(billingEndorsementText);
+        orderProductRequestDetail.setInquiryReferenceDetail(inquiryReferenceDetail);
+
+        orderProductRequest.setOrderProductRequestDetail(orderProductRequestDetail);
+        return orderProductRequest;
+    }
+
+    public Document buildOrderProductOperationRequestXmlDocument(String DUNSNumber, String DNBProductID, Boolean archiveProductOptOutIndicator, String billingEndorsementText) {
+        return marshalToDocument(buildOrderProductOperationRequest(DUNSNumber, DNBProductID, archiveProductOptOutIndicator, billingEndorsementText));
+    }
+
+
     public OrderProductRequest buildCredentialVerificationRequest() {
         OrderProductRequest orderProductRequest = new OrderProductRequest();
             RequestTransactionDetail transactionDetail = new RequestTransactionDetail();

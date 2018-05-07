@@ -1,6 +1,6 @@
 {
-  "title": "DNB API (Java)",
-  "description": "elastic.io component for the DNB API",
+  "title": "D&B API (Java)",
+  "description": "elastic.io component for the D&B API",
   "docsUrl": "https://github.com/elasticio/dnb-component-java",
   "credentials": {
     "fields": {
@@ -8,7 +8,7 @@
         "label": "API key",
         "required": true,
         "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <b>DNB</b> API key. For more details see <a href='https://docs.dnb.com/direct/2.0/en-US/newsandmedia/latest/orderproduct/news-soap-API#NewsandSocialMedia' target='_blank'>DNB API docs</a>."
+        "note": "Please use <b>D&B</b> API key. For more details see <a href='https://docs.dnb.com/direct/2.0/en-US/newsandmedia/latest/orderproduct/news-soap-API#NewsandSocialMedia' target='_blank'>D&B API docs</a>."
       },
       "apiPassphrase": {
         "label": "API passphrase",
@@ -20,12 +20,12 @@
   },
   "actions": {
     "CompanyNews": {
-      "main": "io.elastic.petstore.actions.CreatePet",
+      "main": "io.elastic.dnb.actions.GetCompanyNews",
       "title": "Company News",
-      "description": "Creates a new Pet",
+      "description": "Get Company News",
       "metadata": {
-        "in": "./schemas/createPet.in.json",
-        "out": "./schemas/createPet.out.json"
+        "in": "./resources/schemas/getCompanyNews.in.json",
+        "out": "./resources/schemas/getCompanyNews.out.json"
       }
     }
   }
