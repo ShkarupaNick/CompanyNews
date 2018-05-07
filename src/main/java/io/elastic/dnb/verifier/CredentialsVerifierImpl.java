@@ -46,6 +46,7 @@ public class CredentialsVerifierImpl implements CredentialsVerifier {
             Document responseDocument = soapResponse.getSOAPBody().getOwnerDocument();
             XPath xPath = XPathFactory.newInstance().newXPath();
             Node node = ((NodeList) xPath.evaluate("//ResultID/text()", responseDocument.getDocumentElement(), XPathConstants.NODESET)).item(0);
+
             if (node.getNodeValue().equals("SC001")) {
                 throw new InvalidCredentialsException("Invalid api key or passphrase. Please, check credentials and try again...");
             }

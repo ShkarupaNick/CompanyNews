@@ -62,10 +62,10 @@ task wsimport {
     }
 }
 
-compileJava {
-    dependsOn wsimport
-    source wsimport.destDir
-}
+//compileJava {
+//    dependsOn wsimport
+//    source wsimport.destDir
+//}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.0'
