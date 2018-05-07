@@ -1,10 +1,7 @@
 
 package io.elastic.dnb.jaxws;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -30,6 +27,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "OrderProductResponse", propOrder = {
     "orderProductResponseDetail"
 })
+
+@XmlRootElement(name = "OrderProductResponse")
 public class OrderProductResponse
     extends Response
 {

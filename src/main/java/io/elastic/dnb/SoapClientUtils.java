@@ -3,23 +3,19 @@ package io.elastic.dnb;
 import io.elastic.dnb.jaxws.OrderProductResponse;
 import org.w3c.dom.Document;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
 import javax.xml.namespace.QName;
 import javax.xml.soap.*;
 import java.io.ByteArrayOutputStream;
 
 public class SoapClientUtils {
 
-    public SOAPMessage callSoapWebService(String soapEndpointUrl, String soapAction, Document body) {
+    public SOAPMessage callSoapWebService(String soapEndpointUrl, String soapAction, Document body, String apiKey, String apiPassphrase) {
         SOAPMessage soapResponse = null;
         try {
             // Create SOAP Connection
             SOAPConnectionFactory soapConnectionFactory = SOAPConnectionFactory.newInstance();
             SOAPConnection soapConnection = soapConnectionFactory.createConnection();
-            SOAPMessage request = createSOAPRequest(soapAction, body);
+            SOAPMessage request = createSOAPRequest(soapAction, body, apiKey, apiPassphrase);
 
 
             // Print the SOAP Response
@@ -45,7 +41,7 @@ public class SoapClientUtils {
         return soapResponse;
     }
 
-    private SOAPMessage createSOAPRequest(String soapAction, Document body) throws Exception {
+    private SOAPMessage createSOAPRequest(String soapAction, Document body, String apiKey, String apiPassphrase) throws Exception {
         MessageFactory messageFactory = MessageFactory.newInstance();
         SOAPMessage soapMessage = messageFactory.createMessage();
         // SOAP Envelope
@@ -57,7 +53,7 @@ public class SoapClientUtils {
         envelope.getBody().setEncodingStyle("http://schemas.xmlsoap.org/soap/encoding/");
 
         envelope.getBody().addDocument(body);
-        addSoapHeader(envelope);
+        addSoapHeader(envelope, apiKey, apiPassphrase);
 
         MimeHeaders headers = soapMessage.getMimeHeaders();
         headers.addHeader("SOAPAction", soapAction);
@@ -65,7 +61,7 @@ public class SoapClientUtils {
         return soapMessage;
     }
 
-    private void addSoapHeader(SOAPEnvelope envelope) {
+    private void addSoapHeader(SOAPEnvelope envelope, String apiKey, String apiPassphrase) {
         String prefixUri = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-";
         String uri = prefixUri + "wssecurity-secext-1.0.xsd";
         String uta = prefixUri + "wssecurity-utility-1.0.xsd";
@@ -78,9 +74,9 @@ public class SoapClientUtils {
             tokenElem.addAttribute(QName.valueOf("wsu:Id"), "UsernameToken-3");
             tokenElem.addAttribute(QName.valueOf("xmlns:wsu"), uta);
             SOAPElement userElem = factory.createElement("Username", prefix, uri);
-            userElem.addTextNode(Constants.API_KEY);
+            userElem.addTextNode(apiKey);
             SOAPElement pwdElem = factory.createElement("Password", prefix, uri);
-            pwdElem.addTextNode(Constants.API_PASS);
+            pwdElem.addTextNode(apiPassphrase);
             pwdElem.addAttribute(QName.valueOf("Type"), ta);
             tokenElem.addChildElement(userElem);
             tokenElem.addChildElement(pwdElem);

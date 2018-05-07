@@ -10,10 +10,21 @@ import io.elastic.dnb.jaxws.OrderProductResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import javax.json.JsonObject;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
 
 /**
  * Created by NShkarupa on 07.05.2018.
@@ -29,17 +40,30 @@ public class CredentialsVerifierImpl implements CredentialsVerifier {
             logger.info("Verifying the credentials...");
             SoapRequestBuilder requestBuilder = new SoapRequestBuilder();
             SoapClientUtils utils = new SoapClientUtils();
-            Document body = requestBuilder.buildCredentialVerificationRequestXmlDocument(configuration.getJsonString("apiKey").getString(), configuration.getJsonString("apiKey").getString());
+            Document body = requestBuilder.buildCredentialVerificationRequestXmlDocument();
             body.normalizeDocument();
-            SOAPMessage soapResponse = utils.callSoapWebService(Constants.API_URL, "http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct", body);
-            SoapResponseBuilder soapResponseBuilder = new SoapResponseBuilder();
-            OrderProductResponse response = soapResponseBuilder.unmarshallOrderProductResponse(soapResponse.getSOAPBody().getFirstChild());
-
-            if (response.getTransactionResult().getResultID().equals("SC001")) {
+            SOAPMessage soapResponse = utils.callSoapWebService(Constants.API_URL, "http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct", body, configuration.getJsonString("apiKey").getString(), configuration.getJsonString("apiPassphrase").getString());
+            Document responseDocument = soapResponse.getSOAPBody().getOwnerDocument();
+            XPath xPath = XPathFactory.newInstance().newXPath();
+            Node node = ((NodeList) xPath.evaluate("//ResultID/text()", responseDocument.getDocumentElement(), XPathConstants.NODESET)).item(0);
+            if (node.getNodeValue().equals("SC001")) {
                 throw new InvalidCredentialsException("Invalid api key or passphrase. Please, check credentials and try again...");
             }
         } catch (SOAPException e) {
             throw new InvalidCredentialsException("Failed to verify credentials...", e);
+        } catch (XPathExpressionException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void trimWhitespace(Node node) {
+        NodeList children = node.getChildNodes();
+        for (int i = 0; i < children.getLength(); ++i) {
+            Node child = children.item(i);
+            if (child.getNodeType() == Node.TEXT_NODE) {
+                child.setTextContent(child.getTextContent().trim());
+            }
+            trimWhitespace(child);
         }
     }
 }

@@ -13,7 +13,7 @@ public class SoapRequestBuilder {
 
     private SoapRequestBuilder soapRequestBuilder;
 
-    public OrderProductRequest buildCredentialVerificationRequest(String apiKey, String apiPassphrase) {
+    public OrderProductRequest buildCredentialVerificationRequest() {
         OrderProductRequest orderProductRequest = new OrderProductRequest();
             RequestTransactionDetail transactionDetail = new RequestTransactionDetail();
             transactionDetail.setApplicationTransactionID("-1");
@@ -41,12 +41,12 @@ public class SoapRequestBuilder {
         return orderProductRequest;
     }
 
-    public String buildCredentialVerificationRequestXmlString(String apiKey, String apiPassphrase) {
-        return marshalToString(buildCredentialVerificationRequest(apiKey,apiPassphrase));
+    public String buildCredentialVerificationRequestXmlString() {
+        return marshalToString(buildCredentialVerificationRequest());
     }
 
-    public Document buildCredentialVerificationRequestXmlDocument(String apiKey, String apiPassphrase) {
-        return marshalToDocument(buildCredentialVerificationRequest(apiKey,apiPassphrase));
+    public Document buildCredentialVerificationRequestXmlDocument() {
+        return marshalToDocument(buildCredentialVerificationRequest());
     }
 
     public Document marshalToDocument(Object object)  {
