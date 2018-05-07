@@ -7,15 +7,12 @@ import io.elastic.dnb.Constants;
 import io.elastic.dnb.SoapClientUtils;
 import io.elastic.dnb.builder.SoapRequestBuilder;
 import io.elastic.dnb.builder.SoapResponseBuilder;
-import io.elastic.dnb.jaxws.OrderProductRequest;
 import io.elastic.dnb.jaxws.OrderProductResponse;
-import io.elastic.petstore.HttpClientUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
 import javax.json.JsonObject;
-import javax.json.JsonReader;
 import javax.json.JsonString;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
@@ -26,14 +23,9 @@ import javax.xml.soap.SOAPMessage;
 public class OrderProduct implements Module {
     private static final Logger logger = LoggerFactory.getLogger(OrderProduct.class);
 
-    /**
-     * Executes the actions's logic by sending a request to the Petstore API and emitting response to the platform.
-     *
-     * @param parameters execution parameters
-     */
-    @Override
+       @Override
     public void execute(final ExecutionParameters parameters) {
-        logger.info("About to create new pet");
+        logger.info("About getting Order Product info");
         // incoming message
         final Message message = parameters.getMessage();
 
@@ -42,6 +34,7 @@ public class OrderProduct implements Module {
 
         // contains action's configuration
         final JsonObject configuration = parameters.getConfiguration();
+           logger.info("configuration: {}",configuration);
 
         final JsonString apiKey = configuration.getJsonString("apiKey");
         final JsonString apiPassphrase = configuration.getJsonString("apiPassphrase");
