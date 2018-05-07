@@ -24,8 +24,8 @@
       "title": "Company News",
       "description": "Get Company News",
       "metadata": {
-        "in": "./resources/schemas/getCompanyNews.in.json",
-        "out": "./resources/schemas/getCompanyNews.out.json"
+        "in": "./schemas/getCompanyNews.in.json",
+        "out": "./schemas/getCompanyNews.out.json"
       }
     }
   }
