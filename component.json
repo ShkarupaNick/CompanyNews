@@ -20,7 +20,7 @@
   },
   "actions": {
     "CompanyNews": {
-      "main": "io.elastic.dnb.actions.GetCompanyNews",
+      "main": "io.elastic.dnb.actions.OrderProduct",
       "title": "Company News",
       "description": "Get Company News",
       "metadata": {
