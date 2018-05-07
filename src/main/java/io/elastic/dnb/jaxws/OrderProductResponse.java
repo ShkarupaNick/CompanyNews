@@ -61,4 +61,10 @@ public class OrderProductResponse
         this.orderProductResponseDetail = value;
     }
 
+    @Override
+    public String toString() {
+        return "OrderProductResponse{" +
+                "orderProductResponseDetail=" + orderProductResponseDetail +
+                "} " + super.toString();
+    }
 }

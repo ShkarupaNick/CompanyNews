@@ -8,7 +8,7 @@
         "label": "API key",
         "required": true,
         "viewClass": "TextFieldWithNoteView",
-        "note": "Please use <b>DNB</b> API key. For more details see <a href='https://dnb.elastic.io/docs/' target='_blank'>DNB API docs</a>."
+        "note": "Please use <b>DNB</b> API key. For more details see <a href='https://docs.dnb.com/direct/2.0/en-US/newsandmedia/latest/orderproduct/news-soap-API#NewsandSocialMedia' target='_blank'>DNB API docs</a>."
       },
       "apiPassphrase": {
         "label": "API passphrase",
@@ -16,7 +16,7 @@
         "viewClass": "PasswordFieldView"
       }
     },
-    "verifier": "io.elastic.petstore.ApiKeyVerifier"
+    "verifier": "io.elastic.dnb.verifier.CredentialsVerifierImpl"
   },
   "actions": {
     "CompanyNews": {

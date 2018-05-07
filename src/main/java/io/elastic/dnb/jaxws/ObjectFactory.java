@@ -40,35 +40,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Subject }
+     * Create an instance of {@link OrderProductRequestDetail }
      * 
      */
-    public Subject createSubject() {
-        return new Subject();
-    }
-
-    /**
-     * Create an instance of {@link RetrieveProductRequestDetail }
-     * 
-     */
-    public RetrieveProductRequestDetail createRetrieveProductRequestDetail() {
-        return new RetrieveProductRequestDetail();
-    }
-
-    /**
-     * Create an instance of {@link TransactionResult }
-     * 
-     */
-    public TransactionResult createTransactionResult() {
-        return new TransactionResult();
-    }
-
-    /**
-     * Create an instance of {@link ResultMessage2 }
-     * 
-     */
-    public ResultMessage2 createResultMessage2() {
-        return new ResultMessage2();
+    public OrderProductRequestDetail createOrderProductRequestDetail() {
+        return new OrderProductRequestDetail();
     }
 
     /**
@@ -80,19 +56,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OrderProductRequestDetail }
+     * Create an instance of {@link TransactionResult }
      * 
      */
-    public OrderProductRequestDetail createOrderProductRequestDetail() {
-        return new OrderProductRequestDetail();
+    public TransactionResult createTransactionResult() {
+        return new TransactionResult();
     }
 
     /**
-     * Create an instance of {@link OrderProductRequest }
+     * Create an instance of {@link NewsSpecification }
      * 
      */
-    public OrderProductRequest createOrderProductRequest() {
-        return new OrderProductRequest();
+    public NewsSpecification createNewsSpecification() {
+        return new NewsSpecification();
+    }
+
+    /**
+     * Create an instance of {@link OrganizationPrimaryNameType }
+     * 
+     */
+    public OrganizationPrimaryNameType createOrganizationPrimaryNameType() {
+        return new OrganizationPrimaryNameType();
     }
 
     /**
@@ -104,35 +88,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SocialMediaSpecification }
+     * Create an instance of {@link OrderProductRequest }
      * 
      */
-    public SocialMediaSpecification createSocialMediaSpecification() {
-        return new SocialMediaSpecification();
-    }
-
-    /**
-     * Create an instance of {@link ResultMessage }
-     * 
-     */
-    public ResultMessage createResultMessage() {
-        return new ResultMessage();
-    }
-
-    /**
-     * Create an instance of {@link DNBStringType256 }
-     * 
-     */
-    public DNBStringType256 createDNBStringType256() {
-        return new DNBStringType256();
-    }
-
-    /**
-     * Create an instance of {@link InquiryDetail }
-     * 
-     */
-    public InquiryDetail createInquiryDetail() {
-        return new InquiryDetail();
+    public OrderProductRequest createOrderProductRequest() {
+        return new OrderProductRequest();
     }
 
     /**
@@ -144,62 +104,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TransactionResult2 }
-     * 
-     */
-    public TransactionResult2 createTransactionResult2() {
-        return new TransactionResult2();
-    }
-
-    /**
-     * Create an instance of {@link News }
-     * 
-     */
-    public News createNews() {
-        return new News();
-    }
-
-    /**
-     * Create an instance of {@link Telecommunication }
-     * 
-     */
-    public Telecommunication createTelecommunication() {
-        return new Telecommunication();
-    }
-
-    /**
-     * Create an instance of {@link OrganizationNameBaseType }
-     * 
-     */
-    public OrganizationNameBaseType createOrganizationNameBaseType() {
-        return new OrganizationNameBaseType();
-    }
-
-    /**
-     * Create an instance of {@link ProductResponseInquiryDetail }
-     * 
-     */
-    public ProductResponseInquiryDetail createProductResponseInquiryDetail() {
-        return new ProductResponseInquiryDetail();
-    }
-
-    /**
-     * Create an instance of {@link TelecommunicationNumberSimpleType }
-     * 
-     */
-    public TelecommunicationNumberSimpleType createTelecommunicationNumberSimpleType() {
-        return new TelecommunicationNumberSimpleType();
-    }
-
-    /**
-     * Create an instance of {@link RetrieveProductResponseDetail }
-     * 
-     */
-    public RetrieveProductResponseDetail createRetrieveProductResponseDetail() {
-        return new RetrieveProductResponseDetail();
-    }
-
-    /**
      * Create an instance of {@link SocialMediaDetail }
      * 
      */
@@ -208,51 +112,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Location }
+     * Create an instance of {@link Request }
      * 
      */
-    public Location createLocation() {
-        return new Location();
-    }
-
-    /**
-     * Create an instance of {@link RetrieveProductResponse }
-     * 
-     */
-    public RetrieveProductResponse createRetrieveProductResponse() {
-        return new RetrieveProductResponse();
-    }
-
-    /**
-     * Create an instance of {@link DNBDecodedStringType }
-     * 
-     */
-    public DNBDecodedStringType createDNBDecodedStringType() {
-        return new DNBDecodedStringType();
-    }
-
-    /**
-     * Create an instance of {@link Organization }
-     * 
-     */
-    public Organization createOrganization() {
-        return new Organization();
-    }
-
-    /**
-     * Create an instance of {@link MailAddressType }
-     * 
-     */
-    public MailAddressType createMailAddressType() {
-        return new MailAddressType();
-    }
-
-    /**
-     * Create an instance of {@link Response }
-     * 
-     */
-    public Response createResponse() {
-        return new Response();
+    public Request createRequest() {
+        return new Request();
     }
 
     /**
@@ -264,11 +128,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NewsDetails }
+     * Create an instance of {@link OrderProductResponseDetail }
      * 
      */
-    public NewsDetails createNewsDetails() {
-        return new NewsDetails();
+    public OrderProductResponseDetail createOrderProductResponseDetail() {
+        return new OrderProductResponseDetail();
+    }
+
+    /**
+     * Create an instance of {@link ResultMessage }
+     * 
+     */
+    public ResultMessage createResultMessage() {
+        return new ResultMessage();
+    }
+
+    /**
+     * Create an instance of {@link RetrieveProductResponseDetail }
+     * 
+     */
+    public RetrieveProductResponseDetail createRetrieveProductResponseDetail() {
+        return new RetrieveProductResponseDetail();
     }
 
     /**
@@ -277,6 +157,102 @@ public class ObjectFactory {
      */
     public RequestTransactionDetail createRequestTransactionDetail() {
         return new RequestTransactionDetail();
+    }
+
+    /**
+     * Create an instance of {@link DNBDateType }
+     * 
+     */
+    public DNBDateType createDNBDateType() {
+        return new DNBDateType();
+    }
+
+    /**
+     * Create an instance of {@link Subject }
+     * 
+     */
+    public Subject createSubject() {
+        return new Subject();
+    }
+
+    /**
+     * Create an instance of {@link Response }
+     * 
+     */
+    public Response createResponse() {
+        return new Response();
+    }
+
+    /**
+     * Create an instance of {@link OrganizationDetail }
+     * 
+     */
+    public OrganizationDetail createOrganizationDetail() {
+        return new OrganizationDetail();
+    }
+
+    /**
+     * Create an instance of {@link PrimaryAddressType }
+     * 
+     */
+    public PrimaryAddressType createPrimaryAddressType() {
+        return new PrimaryAddressType();
+    }
+
+    /**
+     * Create an instance of {@link OrganizationName }
+     * 
+     */
+    public OrganizationName createOrganizationName() {
+        return new OrganizationName();
+    }
+
+    /**
+     * Create an instance of {@link ResultMessage2 }
+     * 
+     */
+    public ResultMessage2 createResultMessage2() {
+        return new ResultMessage2();
+    }
+
+    /**
+     * Create an instance of {@link News }
+     * 
+     */
+    public News createNews() {
+        return new News();
+    }
+
+    /**
+     * Create an instance of {@link OrganizationNameBaseType }
+     * 
+     */
+    public OrganizationNameBaseType createOrganizationNameBaseType() {
+        return new OrganizationNameBaseType();
+    }
+
+    /**
+     * Create an instance of {@link ArchiveDetail }
+     * 
+     */
+    public ArchiveDetail createArchiveDetail() {
+        return new ArchiveDetail();
+    }
+
+    /**
+     * Create an instance of {@link TelecommunicationNumberType }
+     * 
+     */
+    public TelecommunicationNumberType createTelecommunicationNumberType() {
+        return new TelecommunicationNumberType();
+    }
+
+    /**
+     * Create an instance of {@link StreetAddressLine }
+     * 
+     */
+    public StreetAddressLine createStreetAddressLine() {
+        return new StreetAddressLine();
     }
 
     /**
@@ -296,19 +272,91 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OrderProductResponse }
+     * Create an instance of {@link TelecommunicationNumberSimpleType }
      * 
      */
-    public OrderProductResponse createOrderProductResponse() {
-        return new OrderProductResponse();
+    public TelecommunicationNumberSimpleType createTelecommunicationNumberSimpleType() {
+        return new TelecommunicationNumberSimpleType();
     }
 
     /**
-     * Create an instance of {@link PrimaryAddressType }
+     * Create an instance of {@link Location }
      * 
      */
-    public PrimaryAddressType createPrimaryAddressType() {
-        return new PrimaryAddressType();
+    public Location createLocation() {
+        return new Location();
+    }
+
+    /**
+     * Create an instance of {@link ResponseTransactionDetail }
+     * 
+     */
+    public ResponseTransactionDetail createResponseTransactionDetail() {
+        return new ResponseTransactionDetail();
+    }
+
+    /**
+     * Create an instance of {@link Organization }
+     * 
+     */
+    public Organization createOrganization() {
+        return new Organization();
+    }
+
+    /**
+     * Create an instance of {@link MailAddressType }
+     * 
+     */
+    public MailAddressType createMailAddressType() {
+        return new MailAddressType();
+    }
+
+    /**
+     * Create an instance of {@link RetrieveProductResponse }
+     * 
+     */
+    public RetrieveProductResponse createRetrieveProductResponse() {
+        return new RetrieveProductResponse();
+    }
+
+    /**
+     * Create an instance of {@link ProductResponseInquiryDetail }
+     * 
+     */
+    public ProductResponseInquiryDetail createProductResponseInquiryDetail() {
+        return new ProductResponseInquiryDetail();
+    }
+
+    /**
+     * Create an instance of {@link SocialMediaSpecification }
+     * 
+     */
+    public SocialMediaSpecification createSocialMediaSpecification() {
+        return new SocialMediaSpecification();
+    }
+
+    /**
+     * Create an instance of {@link BaseAddressType }
+     * 
+     */
+    public BaseAddressType createBaseAddressType() {
+        return new BaseAddressType();
+    }
+
+    /**
+     * Create an instance of {@link DNBStringType256 }
+     * 
+     */
+    public DNBStringType256 createDNBStringType256() {
+        return new DNBStringType256();
+    }
+
+    /**
+     * Create an instance of {@link RetrieveProductArchiveDetail }
+     * 
+     */
+    public RetrieveProductArchiveDetail createRetrieveProductArchiveDetail() {
+        return new RetrieveProductArchiveDetail();
     }
 
     /**
@@ -328,43 +376,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OrganizationDetail }
+     * Create an instance of {@link DNBDecodedStringType }
      * 
      */
-    public OrganizationDetail createOrganizationDetail() {
-        return new OrganizationDetail();
+    public DNBDecodedStringType createDNBDecodedStringType() {
+        return new DNBDecodedStringType();
     }
 
     /**
-     * Create an instance of {@link ArchiveDetail }
+     * Create an instance of {@link InquiryDetail }
      * 
      */
-    public ArchiveDetail createArchiveDetail() {
-        return new ArchiveDetail();
+    public InquiryDetail createInquiryDetail() {
+        return new InquiryDetail();
     }
 
     /**
-     * Create an instance of {@link Request }
+     * Create an instance of {@link RetrieveProductRequestDetail }
      * 
      */
-    public Request createRequest() {
-        return new Request();
+    public RetrieveProductRequestDetail createRetrieveProductRequestDetail() {
+        return new RetrieveProductRequestDetail();
     }
 
     /**
-     * Create an instance of {@link RetrieveProductArchiveDetail }
+     * Create an instance of {@link Telecommunication }
      * 
      */
-    public RetrieveProductArchiveDetail createRetrieveProductArchiveDetail() {
-        return new RetrieveProductArchiveDetail();
+    public Telecommunication createTelecommunication() {
+        return new Telecommunication();
     }
 
     /**
-     * Create an instance of {@link StreetAddressLine }
+     * Create an instance of {@link TransactionResult2 }
      * 
      */
-    public StreetAddressLine createStreetAddressLine() {
-        return new StreetAddressLine();
+    public TransactionResult2 createTransactionResult2() {
+        return new TransactionResult2();
+    }
+
+    /**
+     * Create an instance of {@link OrderProductResponse }
+     * 
+     */
+    public OrderProductResponse createOrderProductResponse() {
+        return new OrderProductResponse();
     }
 
     /**
@@ -376,67 +432,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BaseAddressType }
+     * Create an instance of {@link NewsDetails }
      * 
      */
-    public BaseAddressType createBaseAddressType() {
-        return new BaseAddressType();
-    }
-
-    /**
-     * Create an instance of {@link OrganizationPrimaryNameType }
-     * 
-     */
-    public OrganizationPrimaryNameType createOrganizationPrimaryNameType() {
-        return new OrganizationPrimaryNameType();
-    }
-
-    /**
-     * Create an instance of {@link NewsSpecification }
-     * 
-     */
-    public NewsSpecification createNewsSpecification() {
-        return new NewsSpecification();
-    }
-
-    /**
-     * Create an instance of {@link TelecommunicationNumberType }
-     * 
-     */
-    public TelecommunicationNumberType createTelecommunicationNumberType() {
-        return new TelecommunicationNumberType();
-    }
-
-    /**
-     * Create an instance of {@link OrganizationName }
-     * 
-     */
-    public OrganizationName createOrganizationName() {
-        return new OrganizationName();
-    }
-
-    /**
-     * Create an instance of {@link OrderProductResponseDetail }
-     * 
-     */
-    public OrderProductResponseDetail createOrderProductResponseDetail() {
-        return new OrderProductResponseDetail();
-    }
-
-    /**
-     * Create an instance of {@link ResponseTransactionDetail }
-     * 
-     */
-    public ResponseTransactionDetail createResponseTransactionDetail() {
-        return new ResponseTransactionDetail();
-    }
-
-    /**
-     * Create an instance of {@link DNBDateType }
-     * 
-     */
-    public DNBDateType createDNBDateType() {
-        return new DNBDateType();
+    public NewsDetails createNewsDetails() {
+        return new NewsDetails();
     }
 
     /**
