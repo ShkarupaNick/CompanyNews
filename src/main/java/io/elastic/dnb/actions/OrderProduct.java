@@ -11,7 +11,6 @@ import io.elastic.dnb.jaxws.OrderProductResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-
 import javax.json.JsonObject;
 import javax.json.JsonString;
 import javax.xml.soap.SOAPException;
@@ -28,11 +27,11 @@ public class OrderProduct implements Module {
         logger.info("About getting Order Product info");
         // incoming message
         final Message message = parameters.getMessage();
-        logger.info("message: {}", message);
+        logger.trace("message: {}", message);
 
         // body contains the mapped data
         final JsonObject body = message.getBody();
-        logger.info("body: {}", message);
+        logger.trace("body: {}", body);
 
 
         // contains action's configuration
@@ -58,11 +57,12 @@ public class OrderProduct implements Module {
             OrderProductResponse respObject = responseBuilder.unmarshallOrderProductResponse(soapResponse.getSOAPBody().getFirstChild());
             JsonObject responseJsonObj = responseBuilder.marshallOrderProductResponseToJson(respObject);
             parameters.getEventEmitter().emitData(new Message.Builder().body(responseJsonObj).build());
-        } catch (SOAPException e) {
-            e.printStackTrace();
+            logger.info("response successfully received");
+            logger.trace("response: {}",responseJsonObj);
+        } catch (Exception e) {
+            parameters.getEventEmitter().emitException(e);
+            new RuntimeException(e.getMessage());
         }
-        logger.info("response successfully received");
 
-        // emitting the message to the platform
     }
 }

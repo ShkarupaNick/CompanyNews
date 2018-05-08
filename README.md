@@ -1,19 +1,18 @@
-# petstore-component-java
-> Petstore Java component template for the [elastic.io platform](http://www.elastic.io "elastic.io platform")
+# _DnB-component-java_
+> DnB integration component for the [elastic.io platform](http://www.elastic.io "elastic.io platform")
 
-This is a component template which we commonly refer as **the first step of the development** for creating a component to deploy into our platform. This component comes with a basic architecture which can be used on our platform. You can clone it and use it. However, **if you plan to deploy it into [elastic.io platform](https://www.elastic.io "elastic.io platform") you must follow sets of instructions to succeed**.
+This is a component which can call **Company News D&B API** and returns news items for a given **D-U-N-S Number**.
 
 ## Before you Begin
 
-Before you can deploy any code into our system **you must be a registered elastic.io platform user**. Please see our home page at [https://www.elastic.io](https://www.elastic.io) to learn how.
+Before you can deploy any code into our system **you should be a registered [developer.dnb.com](https://developer.dnb.com/register-v2) platform user**. Please see service [**documentation**](https://docs.dnb.com/direct/2.0/en-US/developer/credentials) to learn how use it.
 
-> Any attempt to deploy a code into our platform without a registration would be rejected.
-
-After the registration and opening of the account you must **[upload your SSH Key](http://go2.elastic.io/manage-ssh-keys)** into our platform.
-
-> If you fail to upload you SSH Key you will get **permission denied** error during the deployment.
+> When registration will be completed, You will have your UserID, which DnB send to Your email and passphrase, which you will enter during registration process.
 
 ## Getting Started
+
+####_Step 1_ 
+![alt text](./src/main/resources/1.png)
 
 After registration and uploading of your SSH Key you can proceed to deploy it into our system. At this stage we suggest you to:
 * [Create a team](http://go2.elastic.io/manage-teams) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.

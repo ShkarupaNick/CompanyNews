@@ -6,11 +6,19 @@
       "required": true,
       "properties": {
         "TransactionDetail": {
-          "required": true,
+          "required": false,
           "type": "object",
           "properties": {
             "ApplicationTransactionID": {
-              "required": true,
+              "required": false,
+              "type": "string"
+            },
+            "TransactionTimestamp": {
+              "required": false,
+              "type": "string"
+            },
+            "SubmittingOfficeID": {
+              "required": false,
               "type": "string"
             }
           }
@@ -26,6 +34,10 @@
                 "DUNSNumber": {
                   "required": true,
                   "type": "string"
+                },
+                "CountryISOAlpha2Code": {
+                  "required": false,
+                  "type": "string"
                 }
               }
             },
@@ -36,6 +48,73 @@
                 "DNBProductID": {
                   "type": "string",
                   "required": true
+                },
+                "LanguagePreferenceCode": {
+                  "type": "integer",
+                  "required": false
+                },
+                "TradeUpIndicator": {
+                  "type": "boolean",
+                  "required": false
+                },
+                "NewsSpecification": {
+                  "type": "object",
+                  "required": false,
+                  "properties": {
+                    "PublishedFromDate": {
+                      "type": "string",
+                      "required": false
+                    },
+                    "PublishedToDate": {
+                      "type": "string",
+                      "required": false
+                    },
+                    "CategoryText": {
+                      "type": "array",
+                      "minItems": 0,
+                      "uniqueItems": false,
+                      "items": {
+                        "CategoryText": {
+                          "type": "string",
+                          "enum": [
+                            "Awards",
+                            "Bankruptcy",
+                            "Earnings Release",
+                            "Executive Activity",
+                            "Executive Announcement",
+                            "Executive Quote",
+                            "Expansion",
+                            "Financial News",
+                            "Funding",
+                            "Management Change",
+                            "Merger and Acquisition",
+                            "New Alliance",
+                            "New Product",
+                            "Reduction",
+                            "Regulation or Litigation",
+                            "Restructure",
+                            "Wins"
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "SocialMediaSpecification": {
+                  "type": "array",
+                  "minItems": 0,
+                  "uniqueItems": false,
+                  "items": {
+                    "SocialMediaPlatformName": {
+                      "type": "string",
+                      "enum": [
+                        "Youtube",
+                        "Facebook",
+                        "Twitter",
+                        "Wikipedia"
+                      ]
+                    }
+                  }
                 }
               }
             },
@@ -43,15 +122,29 @@
               "type": "object",
               "properties": {
                 "ArchiveProductOptOutIndicator": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "required": false
+                },
+                "ExtendArchivePeriodIndicator": {
+                  "type": "boolean",
+                  "required": false
+                },
+                "PortfolioAssetContainerID": {
+                  "type": "integer",
+                  "required": false
                 }
               }
             },
             "InquiryReferenceDetail": {
               "type": "object",
               "properties": {
+                "CustomerReferenceText": {
+                  "type": "string",
+                  "required": false
+                },
                 "CustomerBillingEndorsementText": {
-                  "type": "string"
+                  "type": "string",
+                  "required": false
                 }
               }
             }

@@ -41,7 +41,7 @@ public class SoapClientUtils {
 
         } catch (Exception e) {
             logger.error("Error occurred while sending SOAP Request to Server!  Make sure you have the correct endpoint URL and SOAPAction!");
-            throw new RuntimeException(e);
+            throw new RuntimeException(e.getMessage());
         }
         return soapResponse;
     }
@@ -88,7 +88,7 @@ public class SoapClientUtils {
             securityElem.addChildElement(tokenElem);
             envelope.getHeader().addChildElement(securityElem);
         } catch (SOAPException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException(e.getMessage());
         }
     }
     private static String toString(Document doc) {
