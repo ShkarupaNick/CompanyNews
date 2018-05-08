@@ -12,24 +12,24 @@ Before you can use integration component **you should be a registered [developer
 ## Getting Started
 
 ###_Step 1_ 
-Select D&B integration component.
+>Select D&B integration component.
 ![alt text](/src/main/resources/1.png)
 
-###_Step 2_
-Enter the **credentials**, that you got during registration process.
+##_Step 2_
+>Enter the **credentials**, that you got during registration process.
 ![alt text](/src/main/resources/2.png)
 
 
-###_Step 3_
-Select the **action,** of integration component.
+## _Step 3_
+>Select the **action,** of integration component.
 ![alt text](/src/main/resources/3.png)
 
-
-###_Step 4_
-Configure input. Fill or map object using D&B service [**documentation**](https://docs.dnb.com/direct/2.0/en-US/developer/credentials);
+## _Step 4_
+>Configure input. Fill or map object using D&B service [**documentation**](https://docs.dnb.com/direct/2.0/en-US/developer/credentials);
 ![alt text](/src/main/resources/4.png)
 
-###_Step 5_
-Generate the sample that you will use in your integration flow.
+## _Step 5_
+>Generate the sample that you will use in your integration flow.
 ![alt text](/src/main/resources/5.png)
-Review the result of generation the sample.
+>Review the result of generation the sample.
+![alt text](/src/main/resources/6.png)
