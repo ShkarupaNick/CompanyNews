@@ -63,7 +63,7 @@ public class OrderProduct implements Module {
         } catch (Exception e) {
             logger.error("Internal Component error {}",e.getMessage());
             parameters.getEventEmitter().emitException(e);
-            new RuntimeException(e.getMessage());
+            //new RuntimeException(e.getMessage());
         }
 
     }
