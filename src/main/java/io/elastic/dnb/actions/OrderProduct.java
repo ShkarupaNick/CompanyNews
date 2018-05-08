@@ -11,9 +11,9 @@ import io.elastic.dnb.jaxws.OrderProductResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
+
 import javax.json.JsonObject;
 import javax.json.JsonString;
-import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
 
 /**
@@ -61,6 +61,7 @@ public class OrderProduct implements Module {
             logger.info("response successfully received");
             logger.trace("response: {}",responseJsonObj);
         } catch (Exception e) {
+            logger.error("Internal Component error {}",e.getMessage());
             parameters.getEventEmitter().emitException(e);
             new RuntimeException(e.getMessage());
         }
