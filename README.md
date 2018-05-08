@@ -25,7 +25,7 @@ Before you can use integration component **you should be a registered [developer
 ![alt text](/src/main/resources/3.png)
 
 ## _Step 4_
->Configure input. Fill or map object using D&B service [**documentation**](https://docs.dnb.com/direct/2.0/en-US/developer/credentials);
+>Configure input. Fill input data object using D&B service [**documentation**](https://docs.dnb.com/direct/2.0/en-US/developer/credentials);
 ![alt text](/src/main/resources/4.png)
 
 ## _Step 5_
@@ -35,5 +35,5 @@ Before you can use integration component **you should be a registered [developer
 ![alt text](/src/main/resources/6.png)
 
 ## _Step 6_
->Enter the description for the step and finish configuration.
+>Enter the description and finish step configuration.
 ![alt text](/src/main/resources/7.png)
