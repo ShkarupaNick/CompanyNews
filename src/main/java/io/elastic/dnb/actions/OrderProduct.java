@@ -23,22 +23,24 @@ import javax.xml.soap.SOAPMessage;
 public class OrderProduct implements Module {
     private static final Logger logger = LoggerFactory.getLogger(OrderProduct.class);
 
-       @Override
+    @Override
     public void execute(final ExecutionParameters parameters) {
         logger.info("About getting Order Product info");
         // incoming message
         final Message message = parameters.getMessage();
+        logger.info("message: {}", message);
 
         // body contains the mapped data
         final JsonObject body = message.getBody();
+        logger.info("body: {}", message);
+
 
         // contains action's configuration
         final JsonObject configuration = parameters.getConfiguration();
-           logger.info("configuration: {}",configuration);
+        logger.info("configuration: {}", configuration);
 
         final JsonString apiKey = configuration.getJsonString("apiKey");
         final JsonString apiPassphrase = configuration.getJsonString("apiPassphrase");
-
 
 
         JsonObject orderProductRequestDetail = body.getJsonObject("OrderProductRequest").getJsonObject("OrderProductRequestDetail");
@@ -53,7 +55,7 @@ public class OrderProduct implements Module {
         SOAPMessage soapResponse = utils.callSoapWebService(Constants.API_URL, "http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct", request, configuration.getJsonString("apiKey").getString(), configuration.getJsonString("apiPassphrase").getString());
         SoapResponseBuilder responseBuilder = new SoapResponseBuilder();
         try {
-            OrderProductResponse respObject =  responseBuilder.unmarshallOrderProductResponse(soapResponse.getSOAPBody().getFirstChild());
+            OrderProductResponse respObject = responseBuilder.unmarshallOrderProductResponse(soapResponse.getSOAPBody().getFirstChild());
             JsonObject responseJsonObj = responseBuilder.marshallOrderProductResponseToJson(respObject);
             parameters.getEventEmitter().emitData(new Message.Builder().body(responseJsonObj).build());
         } catch (SOAPException e) {
