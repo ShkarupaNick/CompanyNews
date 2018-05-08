@@ -11,11 +11,11 @@ Before you can use integration component **you should be a registered [developer
 
 ## Getting Started
 
-###_Step 1_ 
+## _Step 1_ 
 >Select D&B integration component.
 ![alt text](/src/main/resources/1.png)
 
-##_Step 2_
+## _Step 2_
 >Enter the **credentials**, that you got during registration process.
 ![alt text](/src/main/resources/2.png)
 
