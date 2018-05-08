@@ -42,18 +42,19 @@ public class OrderProduct implements Module {
         final JsonString apiPassphrase = configuration.getJsonString("apiPassphrase");
 
 
-        JsonObject orderProductRequestDetail = body.getJsonObject("OrderProductRequest").getJsonObject("OrderProductRequestDetail");
-        String DUNSNumber = orderProductRequestDetail.getJsonObject("InquiryDetail").getString("DUNSNumber");
-        String DNBProductID = orderProductRequestDetail.getJsonObject("ProductSpecification").getString("DNBProductID");
-        Boolean archiveProductOptOutIndicator = orderProductRequestDetail.getJsonObject("ArchiveDetail").getBoolean("ArchiveProductOptOutIndicator");
-        String customerBillingEndorsementText = orderProductRequestDetail.getJsonObject("InquiryReferenceDetail").getString("CustomerBillingEndorsementText");
 
-        SoapRequestBuilder soapRequestBuilder = new SoapRequestBuilder();
-        Document request = soapRequestBuilder.buildOrderProductOperationRequestXmlDocument(DUNSNumber, DNBProductID, archiveProductOptOutIndicator, customerBillingEndorsementText);
-        SoapClientUtils utils = new SoapClientUtils();
-        SOAPMessage soapResponse = utils.callSoapWebService(Constants.API_URL, "http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct", request, configuration.getJsonString("apiKey").getString(), configuration.getJsonString("apiPassphrase").getString());
-        SoapResponseBuilder responseBuilder = new SoapResponseBuilder();
         try {
+            JsonObject orderProductRequestDetail = body.getJsonObject("OrderProductRequest").getJsonObject("OrderProductRequestDetail");
+            String DUNSNumber = orderProductRequestDetail.getJsonObject("InquiryDetail").getString("DUNSNumber");
+            String DNBProductID = orderProductRequestDetail.getJsonObject("ProductSpecification").getString("DNBProductID");
+            Boolean archiveProductOptOutIndicator = orderProductRequestDetail.getJsonObject("ArchiveDetail").getBoolean("ArchiveProductOptOutIndicator");
+            String customerBillingEndorsementText = orderProductRequestDetail.getJsonObject("InquiryReferenceDetail").getString("CustomerBillingEndorsementText");
+
+            SoapRequestBuilder soapRequestBuilder = new SoapRequestBuilder();
+            Document request = soapRequestBuilder.buildOrderProductOperationRequestXmlDocument(DUNSNumber, DNBProductID, archiveProductOptOutIndicator, customerBillingEndorsementText);
+            SoapClientUtils utils = new SoapClientUtils();
+            SOAPMessage soapResponse = utils.callSoapWebService(Constants.API_URL, "http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct", request, configuration.getJsonString("apiKey").getString(), configuration.getJsonString("apiPassphrase").getString());
+            SoapResponseBuilder responseBuilder = new SoapResponseBuilder();
             OrderProductResponse respObject = responseBuilder.unmarshallOrderProductResponse(soapResponse.getSOAPBody().getFirstChild());
             JsonObject responseJsonObj = responseBuilder.marshallOrderProductResponseToJson(respObject);
             parameters.getEventEmitter().emitData(new Message.Builder().body(responseJsonObj).build());
