@@ -1,15 +1,19 @@
 package io.elastic.dnb.builder;
 
+import io.elastic.api.JSON;
 import io.elastic.dnb.jaxws.*;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 
+import javax.json.JsonObject;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.io.StringWriter;
 
 public class SoapRequestBuilder {
@@ -46,8 +50,26 @@ public class SoapRequestBuilder {
         return orderProductRequest;
     }
 
+
+    public OrderProductRequest buildOrderProductOperationRequest(JsonObject body) {
+        logger.debug("starting building the OrderProductOperationRequest... ");
+        logger.trace("body: {}", body);
+        ObjectMapper mapper = new ObjectMapper();
+        OrderProductRequest orderProductRequest = null;
+        try {
+            orderProductRequest = mapper.readValue(JSON.stringify(body), OrderProductRequest.class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return orderProductRequest;
+    }
+
     public Document buildOrderProductOperationRequestXmlDocument(String DUNSNumber, String DNBProductID, Boolean archiveProductOptOutIndicator, String billingEndorsementText) {
         return marshalToDocument(buildOrderProductOperationRequest(DUNSNumber, DNBProductID, archiveProductOptOutIndicator, billingEndorsementText));
+    }
+
+    public Document buildOrderProductOperationRequestXmlDocument(JsonObject object) {
+        return marshalToDocument(buildOrderProductOperationRequest(object));
     }
 
 

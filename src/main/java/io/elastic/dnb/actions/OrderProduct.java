@@ -49,7 +49,8 @@ public class OrderProduct implements Module {
             String customerBillingEndorsementText = orderProductRequestDetail.getJsonObject("InquiryReferenceDetail").getString("CustomerBillingEndorsementText");
 
             SoapRequestBuilder soapRequestBuilder = new SoapRequestBuilder();
-            Document request = soapRequestBuilder.buildOrderProductOperationRequestXmlDocument(DUNSNumber, DNBProductID, archiveProductOptOutIndicator, customerBillingEndorsementText);
+            //Document request = soapRequestBuilder.buildOrderProductOperationRequestXmlDocument(DUNSNumber, DNBProductID, archiveProductOptOutIndicator, customerBillingEndorsementText);
+            Document request = soapRequestBuilder.buildOrderProductOperationRequestXmlDocument(body);
             SoapClientUtils utils = new SoapClientUtils();
             SOAPMessage soapResponse = utils.callSoapWebService(Constants.API_URL, "http://services.dnb.com/NewsAndMediaProductService/V3.0/OrderProduct", request, configuration.getJsonString("apiKey").getString(), configuration.getJsonString("apiPassphrase").getString());
             SoapResponseBuilder responseBuilder = new SoapResponseBuilder();
