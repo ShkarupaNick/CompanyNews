@@ -53,7 +53,7 @@ public class SoapRequestBuilder {
 
     public OrderProductRequest buildOrderProductOperationRequest(JsonObject body) {
         logger.debug("starting building the OrderProductOperationRequest... ");
-        logger.trace("body: {}", body);
+        logger.info("body: {}", JSON.stringify(body));
         ObjectMapper mapper = new ObjectMapper();
         OrderProductRequest orderProductRequest = null;
         try {
