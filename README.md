@@ -33,3 +33,7 @@ Before you can use integration component **you should be a registered [developer
 ![alt text](/src/main/resources/5.png)
 >Review the result of generation the sample.
 ![alt text](/src/main/resources/6.png)
+
+## _Step 6_
+>Enter the description for the step and finish configuration.
+![alt text](/src/main/resources/7.png)
