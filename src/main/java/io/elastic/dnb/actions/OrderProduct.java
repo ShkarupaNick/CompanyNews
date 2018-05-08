@@ -41,8 +41,6 @@ public class OrderProduct implements Module {
         final JsonString apiKey = configuration.getJsonString("apiKey");
         final JsonString apiPassphrase = configuration.getJsonString("apiPassphrase");
 
-
-
         try {
             JsonObject orderProductRequestDetail = body.getJsonObject("OrderProductRequest").getJsonObject("OrderProductRequestDetail");
             String DUNSNumber = orderProductRequestDetail.getJsonObject("InquiryDetail").getString("DUNSNumber");
@@ -63,8 +61,7 @@ public class OrderProduct implements Module {
         } catch (Exception e) {
             logger.error("Internal Component error {}",e.getMessage());
             parameters.getEventEmitter().emitException(e);
-            //new RuntimeException(e.getMessage());
+            new RuntimeException(e);
         }
-
     }
 }

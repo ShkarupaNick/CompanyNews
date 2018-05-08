@@ -1,18 +1,18 @@
-# _DnB-component-java_
+# _D&B-component-java_
 > DnB integration component for the [elastic.io platform](http://www.elastic.io "elastic.io platform")
 
 This is a component which can call **Company News D&B API** and returns news items for a given **D-U-N-S Number**.
 
 ## Before you Begin
 
-Before you can deploy any code into our system **you should be a registered [developer.dnb.com](https://developer.dnb.com/register-v2) platform user**. Please see service [**documentation**](https://docs.dnb.com/direct/2.0/en-US/developer/credentials) to learn how use it.
+Before you can use integration component **you should be a registered [developer.dnb.com](https://developer.dnb.com/register-v2) platform user**. Please see service [**documentation**](https://docs.dnb.com/direct/2.0/en-US/developer/credentials) to learn how use it.
 
 > When registration will be completed, You will have your UserID, which DnB send to Your email and passphrase, which you will enter during registration process.
 
 ## Getting Started
 
 ####_Step 1_ 
-![alt text](./src/main/resources/1.png)
+![alt text](/src/main/resources/1.png)
 
 After registration and uploading of your SSH Key you can proceed to deploy it into our system. At this stage we suggest you to:
 * [Create a team](http://go2.elastic.io/manage-teams) to work on your new component. This is not required but will be automatically created using random naming by our system so we suggest you name your team accordingly.
