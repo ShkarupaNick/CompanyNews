@@ -42,11 +42,11 @@ public class OrderProduct implements Module {
         final JsonString apiPassphrase = configuration.getJsonString("apiPassphrase");
 
         try {
-            JsonObject orderProductRequestDetail = body.getJsonObject("OrderProductRequest").getJsonObject("OrderProductRequestDetail");
-            String DUNSNumber = orderProductRequestDetail.getJsonObject("InquiryDetail").getString("DUNSNumber");
-            String DNBProductID = orderProductRequestDetail.getJsonObject("ProductSpecification").getString("DNBProductID");
-            Boolean archiveProductOptOutIndicator = orderProductRequestDetail.getJsonObject("ArchiveDetail").getBoolean("ArchiveProductOptOutIndicator");
-            String customerBillingEndorsementText = orderProductRequestDetail.getJsonObject("InquiryReferenceDetail").getString("CustomerBillingEndorsementText");
+//            JsonObject orderProductRequestDetail = body.getJsonObject("OrderProductRequest").getJsonObject("OrderProductRequestDetail");
+//            String DUNSNumber = orderProductRequestDetail.getJsonObject("InquiryDetail").getString("DUNSNumber");
+//            String DNBProductID = orderProductRequestDetail.getJsonObject("ProductSpecification").getString("DNBProductID");
+//            Boolean archiveProductOptOutIndicator = orderProductRequestDetail.getJsonObject("ArchiveDetail").getBoolean("ArchiveProductOptOutIndicator");
+//            String customerBillingEndorsementText = orderProductRequestDetail.getJsonObject("InquiryReferenceDetail").getString("CustomerBillingEndorsementText");
 
             SoapRequestBuilder soapRequestBuilder = new SoapRequestBuilder();
             //Document request = soapRequestBuilder.buildOrderProductOperationRequestXmlDocument(DUNSNumber, DNBProductID, archiveProductOptOutIndicator, customerBillingEndorsementText);
