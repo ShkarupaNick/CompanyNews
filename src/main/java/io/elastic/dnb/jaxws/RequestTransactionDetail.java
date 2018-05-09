@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,10 +53,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class RequestTransactionDetail {
 
     @XmlElement(name = "ApplicationTransactionID")
+    @JsonProperty("ApplicationTransactionID")
     protected String applicationTransactionID;
     @XmlElement(name = "TransactionTimestamp")
+    @JsonProperty("TransactionTimestamp")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar transactionTimestamp;
+    @JsonProperty("SubmittingOfficeID")
     @XmlElement(name = "SubmittingOfficeID")
     protected String submittingOfficeID;
 
