@@ -54,7 +54,7 @@ public class SoapRequestBuilder {
 
     public OrderProductRequest buildOrderProductOperationRequest(JsonObject body) {
         logger.debug("starting building the OrderProductOperationRequest... ");
-        logger.info("body: {}", JSON.stringify(body));
+        logger.trace("body: {}", JSON.stringify(body));
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationConfig.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         OrderProductRequest orderProductRequest = null;

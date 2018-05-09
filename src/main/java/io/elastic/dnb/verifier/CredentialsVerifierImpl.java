@@ -19,9 +19,6 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-/**
- * Created by NShkarupa on 07.05.2018.
- */
 public class CredentialsVerifierImpl implements CredentialsVerifier {
     private static final Logger logger = LoggerFactory.getLogger(CredentialsVerifierImpl.class);
 
@@ -46,20 +43,10 @@ public class CredentialsVerifierImpl implements CredentialsVerifier {
             }
             logger.info("Credentials successfully verified...");
         } catch (SOAPException e) {
+            logger.error("Failed to verify credentials...");
             throw new InvalidCredentialsException("Failed to verify credentials...", e);
         } catch (XPathExpressionException e) {
             e.printStackTrace();
-        }
-    }
-
-    private void trimWhitespace(Node node) {
-        NodeList children = node.getChildNodes();
-        for (int i = 0; i < children.getLength(); ++i) {
-            Node child = children.item(i);
-            if (child.getNodeType() == Node.TEXT_NODE) {
-                child.setTextContent(child.getTextContent().trim());
-            }
-            trimWhitespace(child);
         }
     }
 }

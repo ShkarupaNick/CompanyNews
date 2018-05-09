@@ -29,13 +29,8 @@ public class SoapClientUtils {
             logger.trace("request: {}",toString(request.getSOAPBody().getOwnerDocument()));
             soapResponse = soapConnection.call(request, soapEndpointUrl);
 
-
             logger.info("Soap response received...");
             logger.trace("response: {}",toString(soapResponse.getSOAPBody().getOwnerDocument()));
-//            // Print the SOAP Response
-//            System.out.println("Response SOAP Message:");
-//            soapResponse.writeTo(System.out);
-//            System.out.println();
 
             soapConnection.close();
 
@@ -91,7 +86,7 @@ public class SoapClientUtils {
             throw new RuntimeException(e.getMessage());
         }
     }
-    private static String toString(Document doc) {
+    public static String toString(Document doc) {
         try {
             StringWriter sw = new StringWriter();
             TransformerFactory tf = TransformerFactory.newInstance();
