@@ -41,12 +41,15 @@ import javax.xml.bind.annotation.XmlType;
 public class OrderProductRequestDetail {
 
     @XmlElement(name = "InquiryDetail", required = true)
-    @JsonProperty
+    @JsonProperty("InquiryDetail")
     protected InquiryDetail inquiryDetail;
+    @JsonProperty("ProductSpecification")
     @XmlElement(name = "ProductSpecification", required = true)
     protected ProductSpecification productSpecification;
+    @JsonProperty("ArchiveDetail")
     @XmlElement(name = "ArchiveDetail")
     protected ArchiveDetail archiveDetail;
+    @JsonProperty("InquiryReferenceDetail")
     @XmlElement(name = "InquiryReferenceDetail")
     protected InquiryReferenceDetail inquiryReferenceDetail;
 
