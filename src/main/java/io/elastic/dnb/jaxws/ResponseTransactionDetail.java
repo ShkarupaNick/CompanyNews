@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -11,9 +13,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for ResponseTransactionDetail complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="ResponseTransactionDetail">
  *   &lt;complexContent>
@@ -39,32 +41,31 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ResponseTransactionDetail", propOrder = {
-    "applicationTransactionID",
-    "serviceTransactionID",
-    "transactionTimestamp"
+        "applicationTransactionID",
+        "serviceTransactionID",
+        "transactionTimestamp"
 })
 public class ResponseTransactionDetail {
 
     @XmlElement(name = "ApplicationTransactionID")
+    @JsonProperty("ApplicationTransactionID")
     protected String applicationTransactionID;
     @XmlElement(name = "ServiceTransactionID", required = true)
+    @JsonProperty("ServiceTransactionID")
     protected String serviceTransactionID;
     @XmlElement(name = "TransactionTimestamp", required = true)
+    @JsonProperty("TransactionTimestamp")
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar transactionTimestamp;
 
     /**
      * Gets the value of the applicationTransactionID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getApplicationTransactionID() {
         return applicationTransactionID;
@@ -72,11 +73,9 @@ public class ResponseTransactionDetail {
 
     /**
      * Sets the value of the applicationTransactionID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setApplicationTransactionID(String value) {
         this.applicationTransactionID = value;
@@ -84,11 +83,9 @@ public class ResponseTransactionDetail {
 
     /**
      * Gets the value of the serviceTransactionID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getServiceTransactionID() {
         return serviceTransactionID;
@@ -96,11 +93,9 @@ public class ResponseTransactionDetail {
 
     /**
      * Sets the value of the serviceTransactionID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setServiceTransactionID(String value) {
         this.serviceTransactionID = value;
@@ -108,11 +103,9 @@ public class ResponseTransactionDetail {
 
     /**
      * Gets the value of the transactionTimestamp property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getTransactionTimestamp() {
         return transactionTimestamp;
@@ -120,11 +113,9 @@ public class ResponseTransactionDetail {
 
     /**
      * Sets the value of the transactionTimestamp property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setTransactionTimestamp(XMLGregorianCalendar value) {
         this.transactionTimestamp = value;

@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -9,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for ArchiveDetail complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="ArchiveDetail">
  *   &lt;complexContent>
@@ -25,31 +27,30 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ArchiveDetail", propOrder = {
-    "archiveProductOptOutIndicator",
-    "extendArchivePeriodIndicator",
-    "portfolioAssetContainerID"
+        "archiveProductOptOutIndicator",
+        "extendArchivePeriodIndicator",
+        "portfolioAssetContainerID"
 })
 public class ArchiveDetail {
 
     @XmlElement(name = "ArchiveProductOptOutIndicator")
+    @JsonProperty("ArchiveProductOptOutIndicator")
     protected Boolean archiveProductOptOutIndicator;
     @XmlElement(name = "ExtendArchivePeriodIndicator")
+    @JsonProperty("ExtendArchivePeriodIndicator")
     protected Boolean extendArchivePeriodIndicator;
     @XmlElement(name = "PortfolioAssetContainerID")
+    @JsonProperty("PortfolioAssetContainerID")
     protected Long portfolioAssetContainerID;
 
     /**
      * Gets the value of the archiveProductOptOutIndicator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isArchiveProductOptOutIndicator() {
         return archiveProductOptOutIndicator;
@@ -57,11 +58,9 @@ public class ArchiveDetail {
 
     /**
      * Sets the value of the archiveProductOptOutIndicator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setArchiveProductOptOutIndicator(Boolean value) {
         this.archiveProductOptOutIndicator = value;
@@ -69,11 +68,9 @@ public class ArchiveDetail {
 
     /**
      * Gets the value of the extendArchivePeriodIndicator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isExtendArchivePeriodIndicator() {
         return extendArchivePeriodIndicator;
@@ -81,11 +78,9 @@ public class ArchiveDetail {
 
     /**
      * Sets the value of the extendArchivePeriodIndicator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setExtendArchivePeriodIndicator(Boolean value) {
         this.extendArchivePeriodIndicator = value;
@@ -93,11 +88,9 @@ public class ArchiveDetail {
 
     /**
      * Gets the value of the portfolioAssetContainerID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Long }
-     *     
+     *
+     * @return possible object is
+     * {@link Long }
      */
     public Long getPortfolioAssetContainerID() {
         return portfolioAssetContainerID;
@@ -105,11 +98,9 @@ public class ArchiveDetail {
 
     /**
      * Sets the value of the portfolioAssetContainerID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Long }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Long }
      */
     public void setPortfolioAssetContainerID(Long value) {
         this.portfolioAssetContainerID = value;

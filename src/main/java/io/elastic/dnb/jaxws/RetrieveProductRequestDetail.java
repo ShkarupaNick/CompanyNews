@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -9,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for RetrieveProductRequestDetail complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="RetrieveProductRequestDetail">
  *   &lt;complexContent>
@@ -23,25 +25,22 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RetrieveProductRequestDetail", propOrder = {
-    "archiveDetail"
+        "archiveDetail"
 })
 public class RetrieveProductRequestDetail {
 
     @XmlElement(name = "ArchiveDetail", required = true)
+    @JsonProperty("ArchiveDetail")
     protected RetrieveProductArchiveDetail archiveDetail;
 
     /**
      * Gets the value of the archiveDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RetrieveProductArchiveDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link RetrieveProductArchiveDetail }
      */
     public RetrieveProductArchiveDetail getArchiveDetail() {
         return archiveDetail;
@@ -49,11 +48,9 @@ public class RetrieveProductRequestDetail {
 
     /**
      * Sets the value of the archiveDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RetrieveProductArchiveDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link RetrieveProductArchiveDetail }
      */
     public void setArchiveDetail(RetrieveProductArchiveDetail value) {
         this.archiveDetail = value;

@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,14 +12,13 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * 
  * Records the address details for a subject. An address is the designation of a place where a subject can be located or may be communicated with, e.g., primary address, registered address, mailing address.
- *          
- * 
+ * <p>
+ * <p>
  * <p>Java class for Location complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Location">
  *   &lt;complexContent>
@@ -30,42 +31,40 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Location", propOrder = {
-    "primaryAddress",
-    "mailingAddress"
+        "primaryAddress",
+        "mailingAddress"
 })
 public class Location {
 
     @XmlElement(name = "PrimaryAddress")
+    @JsonProperty("PrimaryAddress")
     protected List<PrimaryAddressType> primaryAddress;
     @XmlElement(name = "MailingAddress")
+    @JsonProperty("MailingAddress")
     protected List<MailAddressType> mailingAddress;
 
     /**
      * Gets the value of the primaryAddress property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the primaryAddress property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getPrimaryAddress().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link PrimaryAddressType }
-     * 
-     * 
      */
     public List<PrimaryAddressType> getPrimaryAddress() {
         if (primaryAddress == null) {
@@ -76,25 +75,23 @@ public class Location {
 
     /**
      * Gets the value of the mailingAddress property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the mailingAddress property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getMailingAddress().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link MailAddressType }
-     * 
-     * 
      */
     public List<MailAddressType> getMailingAddress() {
         if (mailingAddress == null) {

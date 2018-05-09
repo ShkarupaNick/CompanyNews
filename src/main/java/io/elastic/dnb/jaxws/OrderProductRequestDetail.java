@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for OrderProductRequestDetail complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="OrderProductRequestDetail">
  *   &lt;complexContent>
@@ -28,15 +28,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrderProductRequestDetail", propOrder = {
-    "inquiryDetail",
-    "productSpecification",
-    "archiveDetail",
-    "inquiryReferenceDetail"
+        "inquiryDetail",
+        "productSpecification",
+        "archiveDetail",
+        "inquiryReferenceDetail"
 })
 public class OrderProductRequestDetail {
 
@@ -46,20 +44,18 @@ public class OrderProductRequestDetail {
     @JsonProperty("ProductSpecification")
     @XmlElement(name = "ProductSpecification", required = true)
     protected ProductSpecification productSpecification;
-    @JsonProperty("ArchiveDetail")
     @XmlElement(name = "ArchiveDetail")
+    @JsonProperty("ArchiveDetail")
     protected ArchiveDetail archiveDetail;
-    @JsonProperty("InquiryReferenceDetail")
     @XmlElement(name = "InquiryReferenceDetail")
+    @JsonProperty("InquiryReferenceDetail")
     protected InquiryReferenceDetail inquiryReferenceDetail;
 
     /**
      * Gets the value of the inquiryDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link InquiryDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link InquiryDetail }
      */
     public InquiryDetail getInquiryDetail() {
         return inquiryDetail;
@@ -67,11 +63,9 @@ public class OrderProductRequestDetail {
 
     /**
      * Sets the value of the inquiryDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InquiryDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link InquiryDetail }
      */
     public void setInquiryDetail(InquiryDetail value) {
         this.inquiryDetail = value;
@@ -79,11 +73,9 @@ public class OrderProductRequestDetail {
 
     /**
      * Gets the value of the productSpecification property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ProductSpecification }
-     *     
+     *
+     * @return possible object is
+     * {@link ProductSpecification }
      */
     public ProductSpecification getProductSpecification() {
         return productSpecification;
@@ -91,11 +83,9 @@ public class OrderProductRequestDetail {
 
     /**
      * Sets the value of the productSpecification property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ProductSpecification }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ProductSpecification }
      */
     public void setProductSpecification(ProductSpecification value) {
         this.productSpecification = value;
@@ -103,11 +93,9 @@ public class OrderProductRequestDetail {
 
     /**
      * Gets the value of the archiveDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ArchiveDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link ArchiveDetail }
      */
     public ArchiveDetail getArchiveDetail() {
         return archiveDetail;
@@ -115,11 +103,9 @@ public class OrderProductRequestDetail {
 
     /**
      * Sets the value of the archiveDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ArchiveDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ArchiveDetail }
      */
     public void setArchiveDetail(ArchiveDetail value) {
         this.archiveDetail = value;
@@ -127,11 +113,9 @@ public class OrderProductRequestDetail {
 
     /**
      * Gets the value of the inquiryReferenceDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link InquiryReferenceDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link InquiryReferenceDetail }
      */
     public InquiryReferenceDetail getInquiryReferenceDetail() {
         return inquiryReferenceDetail;
@@ -139,11 +123,9 @@ public class OrderProductRequestDetail {
 
     /**
      * Sets the value of the inquiryReferenceDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link InquiryReferenceDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link InquiryReferenceDetail }
      */
     public void setInquiryReferenceDetail(InquiryReferenceDetail value) {
         this.inquiryReferenceDetail = value;

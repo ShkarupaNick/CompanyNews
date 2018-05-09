@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -11,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for SubjectHeader complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="SubjectHeader">
  *   &lt;complexContent>
@@ -28,34 +30,34 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SubjectHeader", propOrder = {
-    "dunsNumber",
-    "lastUpdateDate",
-    "marketabilityIndicator",
-    "nonMarketableReasonText"
+        "dunsNumber",
+        "lastUpdateDate",
+        "marketabilityIndicator",
+        "nonMarketableReasonText"
 })
 public class SubjectHeader {
 
     @XmlElement(name = "DUNSNumber", required = true)
+    @JsonProperty("DUNSNumber")
     protected String dunsNumber;
     @XmlElement(name = "LastUpdateDate")
+    @JsonProperty("LastUpdateDate")
     protected DNBDateType lastUpdateDate;
     @XmlElement(name = "MarketabilityIndicator")
+    @JsonProperty("MarketabilityIndicator")
     protected Boolean marketabilityIndicator;
     @XmlElement(name = "NonMarketableReasonText")
+    @JsonProperty("NonMarketableReasonText")
     protected List<DNBDecodedStringType> nonMarketableReasonText;
 
     /**
      * Gets the value of the dunsNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDUNSNumber() {
         return dunsNumber;
@@ -63,11 +65,9 @@ public class SubjectHeader {
 
     /**
      * Sets the value of the dunsNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDUNSNumber(String value) {
         this.dunsNumber = value;
@@ -75,11 +75,9 @@ public class SubjectHeader {
 
     /**
      * Gets the value of the lastUpdateDate property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DNBDateType }
-     *     
+     *
+     * @return possible object is
+     * {@link DNBDateType }
      */
     public DNBDateType getLastUpdateDate() {
         return lastUpdateDate;
@@ -87,11 +85,9 @@ public class SubjectHeader {
 
     /**
      * Sets the value of the lastUpdateDate property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DNBDateType }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link DNBDateType }
      */
     public void setLastUpdateDate(DNBDateType value) {
         this.lastUpdateDate = value;
@@ -99,11 +95,9 @@ public class SubjectHeader {
 
     /**
      * Gets the value of the marketabilityIndicator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isMarketabilityIndicator() {
         return marketabilityIndicator;
@@ -111,11 +105,9 @@ public class SubjectHeader {
 
     /**
      * Sets the value of the marketabilityIndicator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setMarketabilityIndicator(Boolean value) {
         this.marketabilityIndicator = value;
@@ -123,25 +115,23 @@ public class SubjectHeader {
 
     /**
      * Gets the value of the nonMarketableReasonText property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the nonMarketableReasonText property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getNonMarketableReasonText().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link DNBDecodedStringType }
-     * 
-     * 
      */
     public List<DNBDecodedStringType> getNonMarketableReasonText() {
         if (nonMarketableReasonText == null) {

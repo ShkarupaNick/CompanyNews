@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -8,14 +10,13 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * 
  * Records data relating to the request for retrieving the archived reports/products and investigation reports and also the transaction information associated with this request.
- *          
- * 
+ * <p>
+ * <p>
  * <p>Java class for RetrieveProductRequest complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="RetrieveProductRequest">
  *   &lt;complexContent>
@@ -27,27 +28,23 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RetrieveProductRequest", propOrder = {
-    "retrieveProductRequestDetail"
+        "retrieveProductRequestDetail"
 })
 public class RetrieveProductRequest
-    extends Request
-{
+        extends Request {
 
     @XmlElement(name = "RetrieveProductRequestDetail", required = true)
+    @JsonProperty("RetrieveProductRequestDetail")
     protected RetrieveProductRequestDetail retrieveProductRequestDetail;
 
     /**
      * Gets the value of the retrieveProductRequestDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RetrieveProductRequestDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link RetrieveProductRequestDetail }
      */
     public RetrieveProductRequestDetail getRetrieveProductRequestDetail() {
         return retrieveProductRequestDetail;
@@ -55,11 +52,9 @@ public class RetrieveProductRequest
 
     /**
      * Sets the value of the retrieveProductRequestDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RetrieveProductRequestDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link RetrieveProductRequestDetail }
      */
     public void setRetrieveProductRequestDetail(RetrieveProductRequestDetail value) {
         this.retrieveProductRequestDetail = value;

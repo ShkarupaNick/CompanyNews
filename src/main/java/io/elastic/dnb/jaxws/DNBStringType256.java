@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -42,8 +44,10 @@ public class DNBStringType256 {
     @XmlValue
     protected String value;
     @XmlAttribute(name = "LanguageCode")
+    @JsonProperty("LanguageCode")
     protected BigInteger languageCode;
     @XmlAttribute(name = "WritingScriptISOAlpha4Code")
+    @JsonProperty("WritingScriptISOAlpha4Code")
     protected String writingScriptISOAlpha4Code;
 
     /**

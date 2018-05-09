@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -11,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for OrganizationDetail complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="OrganizationDetail">
  *   &lt;complexContent>
@@ -26,42 +28,40 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrganizationDetail", propOrder = {
-    "familyTreeMemberRole",
-    "standaloneOrganizationIndicator"
+        "familyTreeMemberRole",
+        "standaloneOrganizationIndicator"
 })
 public class OrganizationDetail {
 
     @XmlElement(name = "FamilyTreeMemberRole")
+    @JsonProperty("FamilyTreeMemberRole")
     protected List<FamilyTreeMemberRole> familyTreeMemberRole;
     @XmlElement(name = "StandaloneOrganizationIndicator")
+    @JsonProperty("StandaloneOrganizationIndicator")
     protected Boolean standaloneOrganizationIndicator;
 
     /**
      * Gets the value of the familyTreeMemberRole property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the familyTreeMemberRole property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getFamilyTreeMemberRole().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link FamilyTreeMemberRole }
-     * 
-     * 
      */
     public List<FamilyTreeMemberRole> getFamilyTreeMemberRole() {
         if (familyTreeMemberRole == null) {
@@ -72,11 +72,9 @@ public class OrganizationDetail {
 
     /**
      * Gets the value of the standaloneOrganizationIndicator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isStandaloneOrganizationIndicator() {
         return standaloneOrganizationIndicator;
@@ -84,11 +82,9 @@ public class OrganizationDetail {
 
     /**
      * Sets the value of the standaloneOrganizationIndicator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setStandaloneOrganizationIndicator(Boolean value) {
         this.standaloneOrganizationIndicator = value;

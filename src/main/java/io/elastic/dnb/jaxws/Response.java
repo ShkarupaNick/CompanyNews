@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -11,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Response complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Response">
  *   &lt;complexContent>
@@ -27,34 +29,32 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Response", propOrder = {
-    "transactionDetail",
-    "transactionResult"
+        "transactionDetail",
+        "transactionResult"
 })
 @XmlSeeAlso({
-    OrderProductResponse.class,
-    RetrieveProductResponse.class
+        OrderProductResponse.class,
+        RetrieveProductResponse.class
 })
 public class Response {
 
     @XmlElement(name = "TransactionDetail", required = true)
+    @JsonProperty("TransactionDetail")
     protected ResponseTransactionDetail transactionDetail;
     @XmlElement(name = "TransactionResult", required = true)
+    @JsonProperty("TransactionResult")
     protected TransactionResult transactionResult;
     @XmlAttribute(name = "ServiceVersionNumber", required = true)
     protected String serviceVersionNumber;
 
     /**
      * Gets the value of the transactionDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ResponseTransactionDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link ResponseTransactionDetail }
      */
     public ResponseTransactionDetail getTransactionDetail() {
         return transactionDetail;
@@ -62,11 +62,9 @@ public class Response {
 
     /**
      * Sets the value of the transactionDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ResponseTransactionDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ResponseTransactionDetail }
      */
     public void setTransactionDetail(ResponseTransactionDetail value) {
         this.transactionDetail = value;
@@ -74,11 +72,9 @@ public class Response {
 
     /**
      * Gets the value of the transactionResult property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TransactionResult }
-     *     
+     *
+     * @return possible object is
+     * {@link TransactionResult }
      */
     public TransactionResult getTransactionResult() {
         return transactionResult;
@@ -86,11 +82,9 @@ public class Response {
 
     /**
      * Sets the value of the transactionResult property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionResult }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link TransactionResult }
      */
     public void setTransactionResult(TransactionResult value) {
         this.transactionResult = value;
@@ -98,11 +92,9 @@ public class Response {
 
     /**
      * Gets the value of the serviceVersionNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getServiceVersionNumber() {
         return serviceVersionNumber;
@@ -110,11 +102,9 @@ public class Response {
 
     /**
      * Sets the value of the serviceVersionNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setServiceVersionNumber(String value) {
         this.serviceVersionNumber = value;

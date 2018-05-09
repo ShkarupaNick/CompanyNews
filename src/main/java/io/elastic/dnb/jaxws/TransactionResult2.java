@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -11,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for TransactionResult complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="TransactionResult">
  *   &lt;complexContent>
@@ -40,34 +42,34 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TransactionResult", namespace = "http://services.dnb.com/TransactionFaultV2.0", propOrder = {
-    "severityText",
-    "resultCode",
-    "resultText",
-    "resultMessage"
+        "severityText",
+        "resultCode",
+        "resultText",
+        "resultMessage"
 })
 public class TransactionResult2 {
 
     @XmlElement(name = "SeverityText", required = true)
+    @JsonProperty("SeverityText")
     protected SeverityType2 severityText;
     @XmlElement(name = "ResultCode", required = true)
+    @JsonProperty("ResultCode")
     protected String resultCode;
     @XmlElement(name = "ResultText")
+    @JsonProperty("ResultText")
     protected String resultText;
     @XmlElement(name = "ResultMessage")
+    @JsonProperty("ResultMessage")
     protected List<ResultMessage2> resultMessage;
 
     /**
      * Gets the value of the severityText property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link SeverityType2 }
-     *     
+     *
+     * @return possible object is
+     * {@link SeverityType2 }
      */
     public SeverityType2 getSeverityText() {
         return severityText;
@@ -75,11 +77,9 @@ public class TransactionResult2 {
 
     /**
      * Sets the value of the severityText property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SeverityType2 }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link SeverityType2 }
      */
     public void setSeverityText(SeverityType2 value) {
         this.severityText = value;
@@ -87,11 +87,9 @@ public class TransactionResult2 {
 
     /**
      * Gets the value of the resultCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getResultCode() {
         return resultCode;
@@ -99,11 +97,9 @@ public class TransactionResult2 {
 
     /**
      * Sets the value of the resultCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setResultCode(String value) {
         this.resultCode = value;
@@ -111,11 +107,9 @@ public class TransactionResult2 {
 
     /**
      * Gets the value of the resultText property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getResultText() {
         return resultText;
@@ -123,11 +117,9 @@ public class TransactionResult2 {
 
     /**
      * Sets the value of the resultText property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setResultText(String value) {
         this.resultText = value;
@@ -135,25 +127,23 @@ public class TransactionResult2 {
 
     /**
      * Gets the value of the resultMessage property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the resultMessage property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getResultMessage().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ResultMessage2 }
-     * 
-     * 
      */
     public List<ResultMessage2> getResultMessage() {
         if (resultMessage == null) {

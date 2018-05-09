@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.*;
 
 /**
  * <p>Java class for OrderProductRequest complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="OrderProductRequest">
  *   &lt;complexContent>
@@ -22,17 +22,14 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrderProductRequest", propOrder = {
-    "orderProductRequestDetail"
+        "orderProductRequestDetail"
 })
 @XmlRootElement(name = "OrderProductRequest")
 public class OrderProductRequest
-    extends Request
-{
+        extends Request {
 
     @XmlElement(name = "OrderProductRequestDetail", required = true)
     @JsonProperty("OrderProductRequestDetail")
@@ -40,11 +37,9 @@ public class OrderProductRequest
 
     /**
      * Gets the value of the orderProductRequestDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link OrderProductRequestDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link OrderProductRequestDetail }
      */
     public OrderProductRequestDetail getOrderProductRequestDetail() {
         return orderProductRequestDetail;
@@ -52,11 +47,9 @@ public class OrderProductRequest
 
     /**
      * Sets the value of the orderProductRequestDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OrderProductRequestDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link OrderProductRequestDetail }
      */
     public void setOrderProductRequestDetail(OrderProductRequestDetail value) {
         this.orderProductRequestDetail = value;

@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -9,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for ResultMessage complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="ResultMessage">
  *   &lt;complexContent>
@@ -29,25 +31,22 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ResultMessage", namespace = "http://services.dnb.com/TransactionFaultV2.0", propOrder = {
-    "resultDescription"
+        "resultDescription"
 })
 public class ResultMessage2 {
 
     @XmlElement(name = "ResultDescription", required = true)
+    @JsonProperty("ResultDescription")
     protected String resultDescription;
 
     /**
      * Gets the value of the resultDescription property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getResultDescription() {
         return resultDescription;
@@ -55,11 +54,9 @@ public class ResultMessage2 {
 
     /**
      * Sets the value of the resultDescription property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setResultDescription(String value) {
         this.resultDescription = value;

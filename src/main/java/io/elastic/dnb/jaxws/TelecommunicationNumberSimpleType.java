@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -10,9 +12,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for TelecommunicationNumberSimpleType complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="TelecommunicationNumberSimpleType">
  *   &lt;complexContent>
@@ -38,31 +40,29 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TelecommunicationNumberSimpleType", propOrder = {
-    "telecommunicationNumber",
-    "internationalDialingCode"
+        "telecommunicationNumber",
+        "internationalDialingCode"
 })
 @XmlSeeAlso({
-    TelecommunicationNumberType.class
+        TelecommunicationNumberType.class
 })
 public class TelecommunicationNumberSimpleType {
 
     @XmlElement(name = "TelecommunicationNumber", required = true)
+    @JsonProperty("TelecommunicationNumber")
     protected String telecommunicationNumber;
     @XmlElement(name = "InternationalDialingCode")
+    @JsonProperty("InternationalDialingCode")
     protected String internationalDialingCode;
 
     /**
      * Gets the value of the telecommunicationNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTelecommunicationNumber() {
         return telecommunicationNumber;
@@ -70,11 +70,9 @@ public class TelecommunicationNumberSimpleType {
 
     /**
      * Sets the value of the telecommunicationNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTelecommunicationNumber(String value) {
         this.telecommunicationNumber = value;
@@ -82,11 +80,9 @@ public class TelecommunicationNumberSimpleType {
 
     /**
      * Gets the value of the internationalDialingCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getInternationalDialingCode() {
         return internationalDialingCode;
@@ -94,11 +90,9 @@ public class TelecommunicationNumberSimpleType {
 
     /**
      * Sets the value of the internationalDialingCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setInternationalDialingCode(String value) {
         this.internationalDialingCode = value;

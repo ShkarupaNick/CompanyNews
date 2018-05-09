@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -8,14 +10,13 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * 
  * Records data that allows the customer to specify identifying information about the subject being inquired, e.g., the DUNS Number, the CountryCode etc.
- *          
- * 
+ * <p>
+ * <p>
  * <p>Java class for InquiryDetail complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="InquiryDetail">
  *   &lt;complexContent>
@@ -28,28 +29,26 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "InquiryDetail", propOrder = {
-    "dunsNumber",
-    "countryISOAlpha2Code"
+        "dunsNumber",
+        "countryISOAlpha2Code"
 })
 public class InquiryDetail {
 
     @XmlElement(name = "DUNSNumber", required = true)
+    @JsonProperty("DUNSNumber")
     protected String dunsNumber;
     @XmlElement(name = "CountryISOAlpha2Code")
+    @JsonProperty("CountryISOAlpha2Code")
     protected String countryISOAlpha2Code;
 
     /**
      * Gets the value of the dunsNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDUNSNumber() {
         return dunsNumber;
@@ -57,11 +56,9 @@ public class InquiryDetail {
 
     /**
      * Sets the value of the dunsNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDUNSNumber(String value) {
         this.dunsNumber = value;
@@ -69,11 +66,9 @@ public class InquiryDetail {
 
     /**
      * Gets the value of the countryISOAlpha2Code property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCountryISOAlpha2Code() {
         return countryISOAlpha2Code;
@@ -81,11 +76,9 @@ public class InquiryDetail {
 
     /**
      * Sets the value of the countryISOAlpha2Code property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCountryISOAlpha2Code(String value) {
         this.countryISOAlpha2Code = value;

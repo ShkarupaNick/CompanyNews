@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -10,9 +12,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for OrganizationNameBaseType complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="OrganizationNameBaseType">
  *   &lt;complexContent>
@@ -24,28 +26,25 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrganizationNameBaseType", propOrder = {
-    "organizationName"
+        "organizationName"
 })
 @XmlSeeAlso({
-    OrganizationPrimaryNameType.class
+        OrganizationPrimaryNameType.class
 })
 public class OrganizationNameBaseType {
 
     @XmlElement(name = "OrganizationName", required = true)
+    @JsonProperty("OrganizationName")
     protected DNBStringType256 organizationName;
 
     /**
      * Gets the value of the organizationName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DNBStringType256 }
-     *     
+     *
+     * @return possible object is
+     * {@link DNBStringType256 }
      */
     public DNBStringType256 getOrganizationName() {
         return organizationName;
@@ -53,11 +52,9 @@ public class OrganizationNameBaseType {
 
     /**
      * Sets the value of the organizationName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DNBStringType256 }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link DNBStringType256 }
      */
     public void setOrganizationName(DNBStringType256 value) {
         this.organizationName = value;

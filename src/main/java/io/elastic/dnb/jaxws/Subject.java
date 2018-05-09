@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -10,9 +12,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Subject complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Subject">
  *   &lt;complexContent>
@@ -26,34 +28,33 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Subject", propOrder = {
-    "subjectHeader",
-    "telecommunication",
-    "location"
+        "subjectHeader",
+        "telecommunication",
+        "location"
 })
 @XmlSeeAlso({
-    Organization.class
+        Organization.class
 })
 public class Subject {
 
     @XmlElement(name = "SubjectHeader", required = true)
+    @JsonProperty("SubjectHeader")
     protected SubjectHeader subjectHeader;
     @XmlElement(name = "Telecommunication")
+    @JsonProperty("Telecommunication")
     protected Telecommunication telecommunication;
     @XmlElement(name = "Location")
+    @JsonProperty("Location")
     protected Location location;
 
     /**
      * Gets the value of the subjectHeader property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link SubjectHeader }
-     *     
+     *
+     * @return possible object is
+     * {@link SubjectHeader }
      */
     public SubjectHeader getSubjectHeader() {
         return subjectHeader;
@@ -61,11 +62,9 @@ public class Subject {
 
     /**
      * Sets the value of the subjectHeader property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SubjectHeader }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link SubjectHeader }
      */
     public void setSubjectHeader(SubjectHeader value) {
         this.subjectHeader = value;
@@ -73,11 +72,9 @@ public class Subject {
 
     /**
      * Gets the value of the telecommunication property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Telecommunication }
-     *     
+     *
+     * @return possible object is
+     * {@link Telecommunication }
      */
     public Telecommunication getTelecommunication() {
         return telecommunication;
@@ -85,11 +82,9 @@ public class Subject {
 
     /**
      * Sets the value of the telecommunication property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Telecommunication }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Telecommunication }
      */
     public void setTelecommunication(Telecommunication value) {
         this.telecommunication = value;
@@ -97,11 +92,9 @@ public class Subject {
 
     /**
      * Gets the value of the location property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Location }
-     *     
+     *
+     * @return possible object is
+     * {@link Location }
      */
     public Location getLocation() {
         return location;
@@ -109,11 +102,9 @@ public class Subject {
 
     /**
      * Sets the value of the location property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Location }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Location }
      */
     public void setLocation(Location value) {
         this.location = value;

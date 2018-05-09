@@ -1,14 +1,16 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for OrderProductResponse complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="OrderProductResponse">
  *   &lt;complexContent>
@@ -20,29 +22,25 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrderProductResponse", propOrder = {
-    "orderProductResponseDetail"
+        "orderProductResponseDetail"
 })
 
 @XmlRootElement(name = "OrderProductResponse")
 public class OrderProductResponse
-    extends Response
-{
+        extends Response {
 
     @XmlElement(name = "OrderProductResponseDetail")
+    @JsonProperty("OrderProductResponseDetail")
     protected OrderProductResponseDetail orderProductResponseDetail;
 
     /**
      * Gets the value of the orderProductResponseDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link OrderProductResponseDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link OrderProductResponseDetail }
      */
     public OrderProductResponseDetail getOrderProductResponseDetail() {
         return orderProductResponseDetail;
@@ -50,11 +48,9 @@ public class OrderProductResponse
 
     /**
      * Sets the value of the orderProductResponseDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OrderProductResponseDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link OrderProductResponseDetail }
      */
     public void setOrderProductResponseDetail(OrderProductResponseDetail value) {
         this.orderProductResponseDetail = value;

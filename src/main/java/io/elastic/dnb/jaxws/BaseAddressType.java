@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -12,9 +14,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for BaseAddressType complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="BaseAddressType">
  *   &lt;complexContent>
@@ -55,31 +57,32 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BaseAddressType", propOrder = {
-    "territoryAbbreviatedName",
-    "postalCode",
-    "countyOfficialName",
-    "territoryOfficialName"
+        "territoryAbbreviatedName",
+        "postalCode",
+        "countyOfficialName",
+        "territoryOfficialName"
 })
 @XmlSeeAlso({
-    PrimaryAddressType.class,
-    MailAddressType.class
+        PrimaryAddressType.class,
+        MailAddressType.class
 })
 public class BaseAddressType
-    extends SimpleAddress
-{
+        extends SimpleAddress {
 
     @XmlElement(name = "TerritoryAbbreviatedName")
+    @JsonProperty("TerritoryAbbreviatedName")
     protected String territoryAbbreviatedName;
     @XmlElement(name = "PostalCode")
+    @JsonProperty("PostalCode")
     protected String postalCode;
     @XmlElement(name = "CountyOfficialName")
+    @JsonProperty("CountyOfficialName")
     protected String countyOfficialName;
     @XmlElement(name = "TerritoryOfficialName")
+    @JsonProperty("TerritoryOfficialName")
     protected String territoryOfficialName;
     @XmlAttribute(name = "LanguageCode")
     protected BigInteger languageCode;
@@ -88,11 +91,9 @@ public class BaseAddressType
 
     /**
      * Gets the value of the territoryAbbreviatedName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTerritoryAbbreviatedName() {
         return territoryAbbreviatedName;
@@ -100,11 +101,9 @@ public class BaseAddressType
 
     /**
      * Sets the value of the territoryAbbreviatedName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTerritoryAbbreviatedName(String value) {
         this.territoryAbbreviatedName = value;
@@ -112,11 +111,9 @@ public class BaseAddressType
 
     /**
      * Gets the value of the postalCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPostalCode() {
         return postalCode;
@@ -124,11 +121,9 @@ public class BaseAddressType
 
     /**
      * Sets the value of the postalCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPostalCode(String value) {
         this.postalCode = value;
@@ -136,11 +131,9 @@ public class BaseAddressType
 
     /**
      * Gets the value of the countyOfficialName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCountyOfficialName() {
         return countyOfficialName;
@@ -148,11 +141,9 @@ public class BaseAddressType
 
     /**
      * Sets the value of the countyOfficialName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCountyOfficialName(String value) {
         this.countyOfficialName = value;
@@ -160,11 +151,9 @@ public class BaseAddressType
 
     /**
      * Gets the value of the territoryOfficialName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTerritoryOfficialName() {
         return territoryOfficialName;
@@ -172,11 +161,9 @@ public class BaseAddressType
 
     /**
      * Sets the value of the territoryOfficialName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTerritoryOfficialName(String value) {
         this.territoryOfficialName = value;
@@ -184,11 +171,9 @@ public class BaseAddressType
 
     /**
      * Gets the value of the languageCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getLanguageCode() {
         return languageCode;
@@ -196,11 +181,9 @@ public class BaseAddressType
 
     /**
      * Sets the value of the languageCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setLanguageCode(BigInteger value) {
         this.languageCode = value;
@@ -208,11 +191,9 @@ public class BaseAddressType
 
     /**
      * Gets the value of the writingScriptCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getWritingScriptCode() {
         return writingScriptCode;
@@ -220,11 +201,9 @@ public class BaseAddressType
 
     /**
      * Sets the value of the writingScriptCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setWritingScriptCode(BigInteger value) {
         this.writingScriptCode = value;

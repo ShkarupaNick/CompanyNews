@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -10,9 +12,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Product complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Product">
  *   &lt;complexContent>
@@ -28,37 +30,38 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Product", propOrder = {
-    "dnbProductID",
-    "languageCode",
-    "organization",
-    "archiveDetail",
-    "copyrightNoticeText"
+        "dnbProductID",
+        "languageCode",
+        "organization",
+        "archiveDetail",
+        "copyrightNoticeText"
 })
 public class Product {
 
     @XmlElement(name = "DNBProductID", required = true)
+    @JsonProperty("DNBProductID")
     protected String dnbProductID;
     @XmlElement(name = "LanguageCode")
+    @JsonProperty("LanguageCode")
     protected BigInteger languageCode;
     @XmlElement(name = "Organization", required = true)
+    @JsonProperty("Organization")
     protected Organization organization;
     @XmlElement(name = "ArchiveDetail")
+    @JsonProperty("ArchiveDetail")
     protected ResponseArchiveDetail archiveDetail;
     @XmlElement(name = "CopyrightNoticeText")
+    @JsonProperty("CopyrightNoticeText")
     protected String copyrightNoticeText;
 
     /**
      * Gets the value of the dnbProductID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDNBProductID() {
         return dnbProductID;
@@ -66,11 +69,9 @@ public class Product {
 
     /**
      * Sets the value of the dnbProductID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDNBProductID(String value) {
         this.dnbProductID = value;
@@ -78,11 +79,9 @@ public class Product {
 
     /**
      * Gets the value of the languageCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getLanguageCode() {
         return languageCode;
@@ -90,11 +89,9 @@ public class Product {
 
     /**
      * Sets the value of the languageCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setLanguageCode(BigInteger value) {
         this.languageCode = value;
@@ -102,11 +99,9 @@ public class Product {
 
     /**
      * Gets the value of the organization property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Organization }
-     *     
+     *
+     * @return possible object is
+     * {@link Organization }
      */
     public Organization getOrganization() {
         return organization;
@@ -114,11 +109,9 @@ public class Product {
 
     /**
      * Sets the value of the organization property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Organization }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Organization }
      */
     public void setOrganization(Organization value) {
         this.organization = value;
@@ -126,11 +119,9 @@ public class Product {
 
     /**
      * Gets the value of the archiveDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ResponseArchiveDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link ResponseArchiveDetail }
      */
     public ResponseArchiveDetail getArchiveDetail() {
         return archiveDetail;
@@ -138,11 +129,9 @@ public class Product {
 
     /**
      * Sets the value of the archiveDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ResponseArchiveDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ResponseArchiveDetail }
      */
     public void setArchiveDetail(ResponseArchiveDetail value) {
         this.archiveDetail = value;
@@ -150,11 +139,9 @@ public class Product {
 
     /**
      * Gets the value of the copyrightNoticeText property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCopyrightNoticeText() {
         return copyrightNoticeText;
@@ -162,11 +149,9 @@ public class Product {
 
     /**
      * Sets the value of the copyrightNoticeText property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCopyrightNoticeText(String value) {
         this.copyrightNoticeText = value;

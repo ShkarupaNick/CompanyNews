@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -9,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Organization complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Organization">
  *   &lt;complexContent>
@@ -25,33 +27,31 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Organization", propOrder = {
-    "organizationName",
-    "organizationDetail",
-    "news"
+        "organizationName",
+        "organizationDetail",
+        "news"
 })
 public class Organization
-    extends Subject
-{
+        extends Subject {
 
     @XmlElement(name = "OrganizationName")
+    @JsonProperty("OrganizationName")
     protected OrganizationName organizationName;
     @XmlElement(name = "OrganizationDetail")
+    @JsonProperty("OrganizationDetail")
     protected OrganizationDetail organizationDetail;
     @XmlElement(name = "News")
+    @JsonProperty("News")
     protected News news;
 
     /**
      * Gets the value of the organizationName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link OrganizationName }
-     *     
+     *
+     * @return possible object is
+     * {@link OrganizationName }
      */
     public OrganizationName getOrganizationName() {
         return organizationName;
@@ -59,11 +59,9 @@ public class Organization
 
     /**
      * Sets the value of the organizationName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OrganizationName }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link OrganizationName }
      */
     public void setOrganizationName(OrganizationName value) {
         this.organizationName = value;
@@ -71,11 +69,9 @@ public class Organization
 
     /**
      * Gets the value of the organizationDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link OrganizationDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link OrganizationDetail }
      */
     public OrganizationDetail getOrganizationDetail() {
         return organizationDetail;
@@ -83,11 +79,9 @@ public class Organization
 
     /**
      * Sets the value of the organizationDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link OrganizationDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link OrganizationDetail }
      */
     public void setOrganizationDetail(OrganizationDetail value) {
         this.organizationDetail = value;
@@ -95,11 +89,9 @@ public class Organization
 
     /**
      * Gets the value of the news property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link News }
-     *     
+     *
+     * @return possible object is
+     * {@link News }
      */
     public News getNews() {
         return news;
@@ -107,11 +99,9 @@ public class Organization
 
     /**
      * Sets the value of the news property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link News }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link News }
      */
     public void setNews(News value) {
         this.news = value;

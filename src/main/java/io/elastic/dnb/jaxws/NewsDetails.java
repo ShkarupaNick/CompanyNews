@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -11,14 +13,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * 
  * An entry loop which can repeat multiple times to allow the recording of the news publications on this subject.
- *          
- * 
+ * <p>
+ * <p>
  * <p>Java class for NewsDetails complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="NewsDetails">
  *   &lt;complexContent>
@@ -47,40 +48,42 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NewsDetails", propOrder = {
-    "publishedDateTimestamp",
-    "sourceDescription",
-    "categoryText",
-    "titleText",
-    "contentText",
-    "webPageURL"
+        "publishedDateTimestamp",
+        "sourceDescription",
+        "categoryText",
+        "titleText",
+        "contentText",
+        "webPageURL"
 })
 public class NewsDetails {
 
     @XmlElement(name = "PublishedDateTimestamp")
+    @JsonProperty("PublishedDateTimestamp")
     protected XMLGregorianCalendar publishedDateTimestamp;
     @XmlElement(name = "SourceDescription")
+    @JsonProperty("SourceDescription")
     protected String sourceDescription;
     @XmlElement(name = "CategoryText")
+    @JsonProperty("CategoryText")
     protected List<DNBDecodedStringType> categoryText;
     @XmlElement(name = "TitleText")
+    @JsonProperty("TitleText")
     protected String titleText;
     @XmlElement(name = "ContentText")
+    @JsonProperty("ContentText")
     protected String contentText;
     @XmlElement(name = "WebPageURL")
+    @JsonProperty("WebPageURL")
     protected String webPageURL;
 
     /**
      * Gets the value of the publishedDateTimestamp property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @return possible object is
+     * {@link XMLGregorianCalendar }
      */
     public XMLGregorianCalendar getPublishedDateTimestamp() {
         return publishedDateTimestamp;
@@ -88,11 +91,9 @@ public class NewsDetails {
 
     /**
      * Sets the value of the publishedDateTimestamp property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link XMLGregorianCalendar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link XMLGregorianCalendar }
      */
     public void setPublishedDateTimestamp(XMLGregorianCalendar value) {
         this.publishedDateTimestamp = value;
@@ -100,11 +101,9 @@ public class NewsDetails {
 
     /**
      * Gets the value of the sourceDescription property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSourceDescription() {
         return sourceDescription;
@@ -112,11 +111,9 @@ public class NewsDetails {
 
     /**
      * Sets the value of the sourceDescription property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSourceDescription(String value) {
         this.sourceDescription = value;
@@ -124,25 +121,23 @@ public class NewsDetails {
 
     /**
      * Gets the value of the categoryText property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the categoryText property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getCategoryText().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link DNBDecodedStringType }
-     * 
-     * 
      */
     public List<DNBDecodedStringType> getCategoryText() {
         if (categoryText == null) {
@@ -153,11 +148,9 @@ public class NewsDetails {
 
     /**
      * Gets the value of the titleText property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTitleText() {
         return titleText;
@@ -165,11 +158,9 @@ public class NewsDetails {
 
     /**
      * Sets the value of the titleText property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTitleText(String value) {
         this.titleText = value;
@@ -177,11 +168,9 @@ public class NewsDetails {
 
     /**
      * Gets the value of the contentText property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getContentText() {
         return contentText;
@@ -189,11 +178,9 @@ public class NewsDetails {
 
     /**
      * Sets the value of the contentText property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setContentText(String value) {
         this.contentText = value;
@@ -201,11 +188,9 @@ public class NewsDetails {
 
     /**
      * Gets the value of the webPageURL property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getWebPageURL() {
         return webPageURL;
@@ -213,11 +198,9 @@ public class NewsDetails {
 
     /**
      * Sets the value of the webPageURL property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setWebPageURL(String value) {
         this.webPageURL = value;

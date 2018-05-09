@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -10,9 +12,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for ProductSpecification complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="ProductSpecification">
  *   &lt;complexContent>
@@ -34,37 +36,38 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ProductSpecification", propOrder = {
-    "dnbProductID",
-    "languagePreferenceCode",
-    "tradeUpIndicator",
-    "newsSpecification",
-    "socialMediaSpecification"
+        "dnbProductID",
+        "languagePreferenceCode",
+        "tradeUpIndicator",
+        "newsSpecification",
+        "socialMediaSpecification"
 })
 public class ProductSpecification {
 
     @XmlElement(name = "DNBProductID", required = true)
+    @JsonProperty("DNBProductID")
     protected String dnbProductID;
     @XmlElement(name = "LanguagePreferenceCode")
+    @JsonProperty("LanguagePreferenceCode")
     protected BigInteger languagePreferenceCode;
     @XmlElement(name = "TradeUpIndicator")
+    @JsonProperty("TradeUpIndicator")
     protected Boolean tradeUpIndicator;
     @XmlElement(name = "NewsSpecification")
+    @JsonProperty("NewsSpecification")
     protected NewsSpecification newsSpecification;
     @XmlElement(name = "SocialMediaSpecification")
+    @JsonProperty("SocialMediaSpecification")
     protected SocialMediaSpecification socialMediaSpecification;
 
     /**
      * Gets the value of the dnbProductID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDNBProductID() {
         return dnbProductID;
@@ -72,11 +75,9 @@ public class ProductSpecification {
 
     /**
      * Sets the value of the dnbProductID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDNBProductID(String value) {
         this.dnbProductID = value;
@@ -84,11 +85,9 @@ public class ProductSpecification {
 
     /**
      * Gets the value of the languagePreferenceCode property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getLanguagePreferenceCode() {
         return languagePreferenceCode;
@@ -96,11 +95,9 @@ public class ProductSpecification {
 
     /**
      * Sets the value of the languagePreferenceCode property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setLanguagePreferenceCode(BigInteger value) {
         this.languagePreferenceCode = value;
@@ -108,11 +105,9 @@ public class ProductSpecification {
 
     /**
      * Gets the value of the tradeUpIndicator property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Boolean }
-     *     
+     *
+     * @return possible object is
+     * {@link Boolean }
      */
     public Boolean isTradeUpIndicator() {
         return tradeUpIndicator;
@@ -120,11 +115,9 @@ public class ProductSpecification {
 
     /**
      * Sets the value of the tradeUpIndicator property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Boolean }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Boolean }
      */
     public void setTradeUpIndicator(Boolean value) {
         this.tradeUpIndicator = value;
@@ -132,11 +125,9 @@ public class ProductSpecification {
 
     /**
      * Gets the value of the newsSpecification property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link NewsSpecification }
-     *     
+     *
+     * @return possible object is
+     * {@link NewsSpecification }
      */
     public NewsSpecification getNewsSpecification() {
         return newsSpecification;
@@ -144,11 +135,9 @@ public class ProductSpecification {
 
     /**
      * Sets the value of the newsSpecification property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link NewsSpecification }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link NewsSpecification }
      */
     public void setNewsSpecification(NewsSpecification value) {
         this.newsSpecification = value;
@@ -156,11 +145,9 @@ public class ProductSpecification {
 
     /**
      * Gets the value of the socialMediaSpecification property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link SocialMediaSpecification }
-     *     
+     *
+     * @return possible object is
+     * {@link SocialMediaSpecification }
      */
     public SocialMediaSpecification getSocialMediaSpecification() {
         return socialMediaSpecification;
@@ -168,11 +155,9 @@ public class ProductSpecification {
 
     /**
      * Sets the value of the socialMediaSpecification property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link SocialMediaSpecification }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link SocialMediaSpecification }
      */
     public void setSocialMediaSpecification(SocialMediaSpecification value) {
         this.socialMediaSpecification = value;

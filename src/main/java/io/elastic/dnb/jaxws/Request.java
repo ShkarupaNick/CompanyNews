@@ -13,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Request complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Request">
  *   &lt;complexContent>
@@ -28,16 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Request", propOrder = {
-    "transactionDetail"
+        "transactionDetail"
 })
 @XmlSeeAlso({
-    RetrieveProductRequest.class,
-    OrderProductRequest.class
+        RetrieveProductRequest.class,
+        OrderProductRequest.class
 })
 public class Request {
 
@@ -50,11 +48,9 @@ public class Request {
 
     /**
      * Gets the value of the transactionDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RequestTransactionDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link RequestTransactionDetail }
      */
     public RequestTransactionDetail getTransactionDetail() {
         return transactionDetail;
@@ -62,11 +58,9 @@ public class Request {
 
     /**
      * Sets the value of the transactionDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RequestTransactionDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link RequestTransactionDetail }
      */
     public void setTransactionDetail(RequestTransactionDetail value) {
         this.transactionDetail = value;
@@ -74,11 +68,9 @@ public class Request {
 
     /**
      * Gets the value of the serviceVersionNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getServiceVersionNumber() {
         return serviceVersionNumber;
@@ -86,11 +78,9 @@ public class Request {
 
     /**
      * Sets the value of the serviceVersionNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setServiceVersionNumber(String value) {
         this.serviceVersionNumber = value;

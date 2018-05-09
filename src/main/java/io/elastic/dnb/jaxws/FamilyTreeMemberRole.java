@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -9,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for FamilyTreeMemberRole complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="FamilyTreeMemberRole">
  *   &lt;complexContent>
@@ -23,27 +25,23 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FamilyTreeMemberRole", propOrder = {
-    "familyTreeMemberRoleText"
+        "familyTreeMemberRoleText"
 })
 public class FamilyTreeMemberRole
-    extends Role
-{
+        extends Role {
 
     @XmlElement(name = "FamilyTreeMemberRoleText")
+    @JsonProperty("FamilyTreeMemberRoleText")
     protected DNBDecodedStringType familyTreeMemberRoleText;
 
     /**
      * Gets the value of the familyTreeMemberRoleText property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link DNBDecodedStringType }
-     *     
+     *
+     * @return possible object is
+     * {@link DNBDecodedStringType }
      */
     public DNBDecodedStringType getFamilyTreeMemberRoleText() {
         return familyTreeMemberRoleText;
@@ -51,11 +49,9 @@ public class FamilyTreeMemberRole
 
     /**
      * Sets the value of the familyTreeMemberRoleText property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link DNBDecodedStringType }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link DNBDecodedStringType }
      */
     public void setFamilyTreeMemberRoleText(DNBDecodedStringType value) {
         this.familyTreeMemberRoleText = value;

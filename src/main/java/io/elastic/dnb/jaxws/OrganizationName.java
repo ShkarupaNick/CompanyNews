@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -11,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for OrganizationName complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="OrganizationName">
  *   &lt;complexContent>
@@ -26,44 +28,41 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrganizationName", propOrder = {
-    "organizationPrimaryName",
-    "tradeStyleName"
+        "organizationPrimaryName",
+        "tradeStyleName"
 })
 public class OrganizationName
-    extends SubjectName
-{
+        extends SubjectName {
 
     @XmlElement(name = "OrganizationPrimaryName")
+    @JsonProperty("OrganizationPrimaryName")
     protected List<OrganizationPrimaryNameType> organizationPrimaryName;
     @XmlElement(name = "TradeStyleName")
+    @JsonProperty("TradeStyleName")
     protected List<OrganizationNameBaseType> tradeStyleName;
 
     /**
      * Gets the value of the organizationPrimaryName property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the organizationPrimaryName property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getOrganizationPrimaryName().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link OrganizationPrimaryNameType }
-     * 
-     * 
      */
     public List<OrganizationPrimaryNameType> getOrganizationPrimaryName() {
         if (organizationPrimaryName == null) {
@@ -74,25 +73,23 @@ public class OrganizationName
 
     /**
      * Gets the value of the tradeStyleName property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the tradeStyleName property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getTradeStyleName().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link OrganizationNameBaseType }
-     * 
-     * 
      */
     public List<OrganizationNameBaseType> getTradeStyleName() {
         if (tradeStyleName == null) {

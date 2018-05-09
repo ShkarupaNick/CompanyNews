@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -8,14 +10,13 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * 
  * Records the archived report/product being returned to the customer as a result of a request, based on user's input criteria and transaction information associated with it. If the system is unable to retrieve the archived report, it should return the failure response along with the cause for failure.
- *          
- * 
+ * <p>
+ * <p>
  * <p>Java class for RetrieveProductResponse complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="RetrieveProductResponse">
  *   &lt;complexContent>
@@ -27,27 +28,23 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RetrieveProductResponse", propOrder = {
-    "retrieveProductResponseDetail"
+        "retrieveProductResponseDetail"
 })
 public class RetrieveProductResponse
-    extends Response
-{
+        extends Response {
 
     @XmlElement(name = "RetrieveProductResponseDetail")
+    @JsonProperty("RetrieveProductResponseDetail")
     protected RetrieveProductResponseDetail retrieveProductResponseDetail;
 
     /**
      * Gets the value of the retrieveProductResponseDetail property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link RetrieveProductResponseDetail }
-     *     
+     *
+     * @return possible object is
+     * {@link RetrieveProductResponseDetail }
      */
     public RetrieveProductResponseDetail getRetrieveProductResponseDetail() {
         return retrieveProductResponseDetail;
@@ -55,11 +52,9 @@ public class RetrieveProductResponse
 
     /**
      * Sets the value of the retrieveProductResponseDetail property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link RetrieveProductResponseDetail }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link RetrieveProductResponseDetail }
      */
     public void setRetrieveProductResponseDetail(RetrieveProductResponseDetail value) {
         this.retrieveProductResponseDetail = value;

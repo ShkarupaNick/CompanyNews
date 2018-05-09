@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -36,8 +38,10 @@ public class DNBDecodedStringType {
     @XmlValue
     protected String value;
     @XmlAttribute(name = "DNBCodeValue")
+    @JsonProperty("DNBCodeValue")
     protected BigInteger dnbCodeValue;
     @XmlAttribute(name = "DNBCodeTableNumber")
+    @JsonProperty("DNBCodeTableNumber")
     protected Integer dnbCodeTableNumber;
 
     /**

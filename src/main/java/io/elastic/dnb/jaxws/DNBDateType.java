@@ -53,7 +53,7 @@ public class DNBDateType {
      * Gets the value of the value property.
      * 
      * @return
-     *     possible object is
+     *     possible object is02.13
      *     {@link String }
      *     
      */
