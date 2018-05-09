@@ -1,152 +1,147 @@
 {
   "type": "object",
+  "required": true,
   "properties": {
-    "OrderProductRequest": {
+    "TransactionDetail": {
+      "required": false,
+      "type": "object",
+      "properties": {
+        "ApplicationTransactionID": {
+          "required": false,
+          "type": "string"
+        },
+        "TransactionTimestamp": {
+          "required": false,
+          "type": "string"
+        },
+        "SubmittingOfficeID": {
+          "required": false,
+          "type": "string"
+        }
+      }
+    },
+    "OrderProductRequestDetail": {
       "type": "object",
       "required": true,
       "properties": {
-        "TransactionDetail": {
-          "required": false,
+        "InquiryDetail": {
+          "required": true,
           "type": "object",
           "properties": {
-            "ApplicationTransactionID": {
-              "required": false,
+            "DUNSNumber": {
+              "required": true,
               "type": "string"
             },
-            "TransactionTimestamp": {
-              "required": false,
-              "type": "string"
-            },
-            "SubmittingOfficeID": {
+            "CountryISOAlpha2Code": {
               "required": false,
               "type": "string"
             }
           }
         },
-        "OrderProductRequestDetail": {
+        "ProductSpecification": {
           "type": "object",
           "required": true,
           "properties": {
-            "InquiryDetail": {
-              "required": true,
-              "type": "object",
-              "properties": {
-                "DUNSNumber": {
-                  "required": true,
-                  "type": "string"
-                },
-                "CountryISOAlpha2Code": {
-                  "required": false,
-                  "type": "string"
-                }
-              }
+            "DNBProductID": {
+              "type": "string",
+              "required": true
             },
-            "ProductSpecification": {
+            "LanguagePreferenceCode": {
+              "type": "integer",
+              "required": false
+            },
+            "TradeUpIndicator": {
+              "type": "boolean",
+              "required": false
+            },
+            "NewsSpecification": {
               "type": "object",
-              "required": true,
+              "required": false,
               "properties": {
-                "DNBProductID": {
+                "PublishedFromDate": {
                   "type": "string",
-                  "required": true
-                },
-                "LanguagePreferenceCode": {
-                  "type": "integer",
                   "required": false
                 },
-                "TradeUpIndicator": {
-                  "type": "boolean",
+                "PublishedToDate": {
+                  "type": "string",
                   "required": false
                 },
-                "NewsSpecification": {
-                  "type": "object",
-                  "required": false,
-                  "properties": {
-                    "PublishedFromDate": {
-                      "type": "string",
-                      "required": false
-                    },
-                    "PublishedToDate": {
-                      "type": "string",
-                      "required": false
-                    },
-                    "CategoryText": {
-                      "type": "array",
-                      "minItems": 0,
-                      "uniqueItems": false,
-                      "items": {
-                        "CategoryText": {
-                          "type": "string",
-                          "enum": [
-                            "Awards",
-                            "Bankruptcy",
-                            "Earnings Release",
-                            "Executive Activity",
-                            "Executive Announcement",
-                            "Executive Quote",
-                            "Expansion",
-                            "Financial News",
-                            "Funding",
-                            "Management Change",
-                            "Merger and Acquisition",
-                            "New Alliance",
-                            "New Product",
-                            "Reduction",
-                            "Regulation or Litigation",
-                            "Restructure",
-                            "Wins"
-                          ]
-                        }
-                      }
-                    }
-                  }
-                },
-                "SocialMediaSpecification": {
+                "CategoryText": {
                   "type": "array",
                   "minItems": 0,
                   "uniqueItems": false,
                   "items": {
-                    "SocialMediaPlatformName": {
+                    "CategoryText": {
                       "type": "string",
                       "enum": [
-                        "Youtube",
-                        "Facebook",
-                        "Twitter",
-                        "Wikipedia"
+                        "Awards",
+                        "Bankruptcy",
+                        "Earnings Release",
+                        "Executive Activity",
+                        "Executive Announcement",
+                        "Executive Quote",
+                        "Expansion",
+                        "Financial News",
+                        "Funding",
+                        "Management Change",
+                        "Merger and Acquisition",
+                        "New Alliance",
+                        "New Product",
+                        "Reduction",
+                        "Regulation or Litigation",
+                        "Restructure",
+                        "Wins"
                       ]
                     }
                   }
                 }
               }
             },
-            "ArchiveDetail": {
-              "type": "object",
-              "properties": {
-                "ArchiveProductOptOutIndicator": {
-                  "type": "boolean",
-                  "required": false
-                },
-                "ExtendArchivePeriodIndicator": {
-                  "type": "boolean",
-                  "required": false
-                },
-                "PortfolioAssetContainerID": {
-                  "type": "integer",
-                  "required": false
+            "SocialMediaSpecification": {
+              "type": "array",
+              "minItems": 0,
+              "uniqueItems": false,
+              "items": {
+                "SocialMediaPlatformName": {
+                  "type": "string",
+                  "enum": [
+                    "Youtube",
+                    "Facebook",
+                    "Twitter",
+                    "Wikipedia"
+                  ]
                 }
               }
+            }
+          }
+        },
+        "ArchiveDetail": {
+          "type": "object",
+          "properties": {
+            "ArchiveProductOptOutIndicator": {
+              "type": "boolean",
+              "required": false
             },
-            "InquiryReferenceDetail": {
-              "type": "object",
-              "properties": {
-                "CustomerReferenceText": {
-                  "type": "string",
-                  "required": false
-                },
-                "CustomerBillingEndorsementText": {
-                  "type": "string",
-                  "required": false
-                }
-              }
+            "ExtendArchivePeriodIndicator": {
+              "type": "boolean",
+              "required": false
+            },
+            "PortfolioAssetContainerID": {
+              "type": "integer",
+              "required": false
+            }
+          }
+        },
+        "InquiryReferenceDetail": {
+          "type": "object",
+          "properties": {
+            "CustomerReferenceText": {
+              "type": "string",
+              "required": false
+            },
+            "CustomerBillingEndorsementText": {
+              "type": "string",
+              "required": false
             }
           }
         }
