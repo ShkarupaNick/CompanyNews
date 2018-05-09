@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.*;
 
 
@@ -33,6 +35,7 @@ public class OrderProductRequest
 {
 
     @XmlElement(name = "OrderProductRequestDetail", required = true)
+    @JsonProperty("OrderProductRequestDetail")
     protected OrderProductRequestDetail orderProductRequestDetail;
 
     /**
