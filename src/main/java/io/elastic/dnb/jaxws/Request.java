@@ -1,6 +1,8 @@
 
 package io.elastic.dnb.jaxws;
 
+import org.codehaus.jackson.annotate.JsonProperty;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -40,8 +42,10 @@ import javax.xml.bind.annotation.XmlType;
 public class Request {
 
     @XmlElement(name = "TransactionDetail")
+    @JsonProperty("TransactionDetail")
     protected RequestTransactionDetail transactionDetail;
     @XmlAttribute(name = "ServiceVersionNumber")
+    @JsonProperty("ServiceVersionNumber")
     protected String serviceVersionNumber;
 
     /**
